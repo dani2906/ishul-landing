@@ -12,7 +12,7 @@
 <meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Frank+Ruhl+Libre:wght@400;500;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
 <style>
   :root {
     --amber:        #c47b2b;
@@ -32,6 +32,7 @@
     --card-shadow:  0 2px 12px rgba(26,16,8,0.09);
     --serif: 'Cormorant Garamond', Georgia, serif;
     --sans:  'Lato', -apple-system, 'Segoe UI', sans-serif;
+    --hebrew: 'Frank Ruhl Libre', 'Times New Roman', serif;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -43,6 +44,12 @@
     -webkit-font-smoothing: antialiased;
   }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── B"SD strip ── */
+  .bsd {
+    text-align: right; padding: 10px 0 0;
+    font-family: var(--hebrew); font-size: 13px; color: var(--muted);
+  }
 
   /* ── Nav ── */
   nav {
@@ -112,6 +119,7 @@
   .app-header { padding: 10px 18px 6px; }
   .app-header .shul-name { font-family: var(--serif); font-weight: 700; font-size: 22px; }
   .app-header .shul-sub { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+  .app-header .shul-sub-he { font-family: var(--hebrew); letter-spacing: 0; font-size: 11px; }
   .hero-card {
     margin: 10px 14px; background: var(--bark-deep); border-radius: 20px;
     padding: 18px 16px; position: relative; overflow: hidden;
@@ -177,6 +185,15 @@
     font-family: var(--serif); font-style: italic; font-weight: 500;
     font-size: 24px; color: var(--amber);
   }
+  .hebrew-quote {
+    text-align: center; margin: -28px auto 44px; direction: rtl;
+    font-family: var(--hebrew); font-weight: 500; font-size: 26px; color: var(--bark);
+  }
+  .hebrew-quote .translit {
+    display: block; direction: ltr;
+    font-family: var(--serif); font-style: italic; font-weight: 500;
+    font-size: 16px; color: var(--muted); margin-top: 2px;
+  }
 
   /* ── Sections ── */
   section { padding: 84px 0; }
@@ -209,6 +226,69 @@
   .step h3 { font-family: var(--serif); font-weight: 700; font-size: 22px; margin-bottom: 8px; }
   .step p { font-size: 14px; color: var(--muted); }
 
+  /* ── Platform (dashboard + websites) ── */
+  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .duo-card {
+    background: var(--white); border: 1px solid var(--border); border-radius: 18px;
+    padding: 32px 28px; box-shadow: var(--card-shadow);
+    display: flex; flex-direction: column;
+  }
+  .duo-tag {
+    align-self: flex-start; font-size: 10px; font-weight: 900; letter-spacing: 1.5px;
+    text-transform: uppercase; padding: 5px 12px; border-radius: 999px; margin-bottom: 16px;
+  }
+  .duo-tag.included { background: rgba(90,122,82,0.14); color: var(--sage); }
+  .duo-tag.service  { background: var(--amber-glow); color: var(--amber); }
+  .duo-card h3 { font-family: var(--serif); font-weight: 700; font-size: 26px; margin-bottom: 10px; }
+  .duo-card > p { font-size: 15px; color: var(--muted); margin-bottom: 24px; }
+
+  .browser {
+    margin-top: auto; border: 1px solid var(--border); border-radius: 14px;
+    overflow: hidden; background: var(--parchment); box-shadow: var(--card-shadow);
+  }
+  .browser-bar {
+    display: flex; align-items: center; gap: 6px;
+    background: var(--parchment-dk); padding: 8px 12px; border-bottom: 1px solid var(--border);
+  }
+  .browser-bar .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
+  .browser-bar .addr {
+    margin-left: 8px; flex: 1; background: var(--white); border-radius: 6px;
+    font-size: 9px; color: var(--muted); padding: 3px 10px;
+  }
+  .dash { display: flex; height: 190px; }
+  .dash-side { width: 88px; background: var(--bark-deep); padding: 12px 10px; }
+  .dash-side .logo { font-family: var(--serif); font-weight: 700; font-size: 12px; color: var(--parchment); margin-bottom: 12px; }
+  .dash-side .item { font-size: 8px; font-weight: 700; color: var(--amber-light); opacity: .65; padding: 5px 8px; border-radius: 6px; }
+  .dash-side .item.on { background: rgba(232,168,74,0.18); opacity: 1; }
+  .dash-main { flex: 1; padding: 12px 14px; }
+  .dash-main .head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .dash-main .head .t { font-family: var(--serif); font-weight: 700; font-size: 13px; }
+  .dash-main .head .add { font-size: 8px; font-weight: 900; background: var(--amber); color: var(--parchment); padding: 4px 10px; border-radius: 8px; }
+  .dash-row {
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--white); border: 1px solid var(--border); border-radius: 8px;
+    padding: 7px 10px; margin-bottom: 6px; font-size: 9px; font-weight: 700;
+  }
+  .dash-row .sub { display: block; font-weight: 400; color: var(--muted); font-size: 8px; }
+  .dash-row .st { font-size: 7px; font-weight: 900; letter-spacing: .5px; padding: 3px 7px; border-radius: 999px; }
+  .st-live { background: rgba(90,122,82,0.14); color: var(--sage); }
+  .st-draft { background: var(--parchment-dk); color: var(--muted); }
+
+  .site { height: 190px; overflow: hidden; }
+  .site-hero { background: var(--bark-deep); padding: 22px 16px 18px; text-align: center; position: relative; overflow: hidden; }
+  .site-hero .orb {
+    position: absolute; width: 150px; height: 150px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,168,74,0.25) 0%, transparent 70%);
+    top: -70px; left: 50%; transform: translateX(-50%);
+  }
+  .site-hero .t { font-family: var(--serif); font-weight: 700; font-size: 16px; color: var(--parchment); position: relative; }
+  .site-hero .s { font-size: 8px; color: var(--amber-light); margin: 4px 0 10px; position: relative; }
+  .site-hero .b { display: inline-block; font-size: 8px; font-weight: 900; background: var(--amber); color: var(--parchment); padding: 4px 12px; border-radius: 8px; position: relative; }
+  .site-cards { display: flex; gap: 8px; padding: 12px 14px; }
+  .site-card { flex: 1; background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 9px 10px; }
+  .site-card .h { font-family: var(--serif); font-weight: 700; font-size: 10px; }
+  .site-card .p { font-size: 7.5px; color: var(--muted); line-height: 1.5; }
+
   /* ── CTA band ── */
   .cta-band { padding: 0 0 84px; }
   .cta-card {
@@ -234,13 +314,15 @@
     .hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .hero { padding: 56px 0 48px; }
     h1 { font-size: 42px; }
-    .feature-grid, .steps, .pillars { grid-template-columns: 1fr; }
+    .feature-grid, .steps, .pillars, .duo { grid-template-columns: 1fr; }
     .nav-links a:not(.btn) { display: none; }
     section { padding: 64px 0; }
   }
 </style>
 </head>
 <body>
+
+<div class="wrap bsd" aria-label="B'siyata Dishmaya">בס״ד</div>
 
 <nav>
   <div class="wrap nav-inner">
@@ -278,7 +360,7 @@
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span>&#9679;&#9679;&#9679;</span></div>
           <div class="app-header">
-            <div class="shul-sub">Welcome to</div>
+            <div class="shul-sub shul-sub-he">ברוכים הבאים</div>
             <div class="shul-name">Kehillat Shalom</div>
           </div>
           <div class="hero-card">
@@ -317,6 +399,7 @@
       <h2>A community united around your shul</h2>
       <p>More than schedules and announcements — one shared space where everyone shows up for each other.</p>
     </div>
+    <p class="hebrew-quote">״כל ישראל ערבים זה בזה״<span class="translit">All of Israel is responsible for one another</span></p>
     <div class="pillars">
       <div class="pillar pillar-sage">
         <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 8.6a5 5 0 0 0-8.1-1.6L12 7.7l-.7-.7a5 5 0 0 0-8.1 1.6c-.9 2.2-.2 4.5 1.5 6.1L12 21l7.3-6.3c1.7-1.6 2.4-3.9 1.5-6.1z"/></svg></div>
@@ -379,6 +462,61 @@
   </div>
 </section>
 
+<section id="platform">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>You're always in control</h2>
+      <p>Every iShul app comes with a simple web dashboard — and if you'd like, we'll design your shul a beautiful, modern website to match.</p>
+    </div>
+    <div class="duo">
+      <div class="duo-card">
+        <span class="duo-tag included">Included with every app</span>
+        <h3>Your content dashboard</h3>
+        <p>Update events, prayer times, announcements, and classes from one simple dashboard — no technical skills needed. Change it once, and the whole community sees it instantly in the app.</p>
+        <div class="browser" role="img" aria-label="Preview of the iShul admin dashboard">
+          <div class="browser-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="addr">dashboard.ishul.org</span></div>
+          <div class="dash">
+            <div class="dash-side">
+              <div class="logo">Your Shul</div>
+              <div class="item on">Events</div>
+              <div class="item">Schedule</div>
+              <div class="item">Board</div>
+              <div class="item">Learning</div>
+            </div>
+            <div class="dash-main">
+              <div class="head"><span class="t">Events</span><span class="add">+ New Event</span></div>
+              <div class="dash-row"><span>Friday Night Dinner<span class="sub">Aug 14 &middot; 7:30 PM &middot; 42 RSVPs</span></span><span class="st st-live">Live</span></div>
+              <div class="dash-row"><span>Parsha Shiur<span class="sub">Aug 17 &middot; 8:00 PM &middot; Library</span></span><span class="st st-live">Live</span></div>
+              <div class="dash-row"><span>Rosh Hashanah Program<span class="sub">Sep 11 &middot; All day</span></span><span class="st st-draft">Draft</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="duo-card">
+        <span class="duo-tag service">Design service</span>
+        <h3>A beautiful, modern website</h3>
+        <p>Need a new web presence too? We design fast, elegant shul websites that match your app — one consistent, warm brand for your community across web, iOS, and Android.</p>
+        <div class="browser" role="img" aria-label="Preview of a shul website designed by iShul">
+          <div class="browser-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="addr">yourshul.org</span></div>
+          <div class="site">
+            <div class="site-hero">
+              <div class="orb"></div>
+              <div class="t">Kehillat Shalom</div>
+              <div class="s">A warm home for Jewish life &middot; Est. 1974</div>
+              <div class="b">Join Us for Shabbat</div>
+            </div>
+            <div class="site-cards">
+              <div class="site-card"><div class="h">Services</div><div class="p">Daily minyanim &amp; Shabbat davening times</div></div>
+              <div class="site-card"><div class="h">Events</div><div class="p">Dinners, classes &amp; holiday programs</div></div>
+              <div class="site-card"><div class="h">About</div><div class="p">Our rabbi, our story, our community</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="how">
   <div class="wrap">
     <div class="section-head">
@@ -398,8 +536,8 @@
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <h3>You stay connected</h3>
-        <p>Update events, schedules, and announcements anytime — your community always sees the latest.</p>
+        <h3>You stay in control</h3>
+        <p>Update events, schedules, and announcements anytime from your dashboard — your community always sees the latest.</p>
       </div>
     </div>
   </div>
