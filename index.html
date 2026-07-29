@@ -391,19 +391,27 @@
   }
   .sheet-secure { text-align: center; font-size: 9px; color: var(--muted); margin-top: 9px; }
 
-  /* White-label palette tiles */
-  .brandlets { display: flex; flex-direction: column; gap: 10px; }
+  /* White-label section */
+  .brandsec { background: var(--parchment-dk); }
+  .brand-tiles {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+    max-width: 840px; margin: 0 auto;
+  }
   .brandlet {
-    display: flex; align-items: center; gap: 12px; border-radius: 14px;
-    padding: 12px 14px; border: 1px solid var(--border);
+    display: flex; align-items: center; gap: 14px; border-radius: 18px;
+    padding: 22px 20px; border: 1px solid var(--border); box-shadow: var(--card-shadow);
   }
   .brandlet .mark {
-    flex: none; width: 34px; height: 34px; border-radius: 10px;
+    flex: none; width: 46px; height: 46px; border-radius: 13px;
     display: flex; align-items: center; justify-content: center;
-    font-family: var(--serif); font-weight: 700; font-size: 15px;
+    font-family: var(--serif); font-weight: 700; font-size: 21px;
   }
-  .brandlet .nm { display: block; font-family: var(--serif); font-weight: 700; font-size: 15px; }
-  .brandlet .sb { display: block; font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; margin-top: 1px; }
+  .brandlet .nm { display: block; font-family: var(--serif); font-weight: 700; font-size: 18px; }
+  .brandlet .sb { display: block; font-size: 9.5px; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 2px; }
+  .brand-note {
+    text-align: center; margin-top: 34px; font-size: 15px; color: var(--muted);
+    max-width: 620px; margin-left: auto; margin-right: auto;
+  }
 
   /* ── Founding offer ── */
   .offer { background: var(--parchment-dk); }
@@ -451,7 +459,7 @@
     .hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .hero { padding: 56px 0 48px; }
     h1 { font-size: 42px; }
-    .steps, .pillars, .duo, .offer-grid, .frow { grid-template-columns: 1fr; }
+    .steps, .pillars, .duo, .offer-grid, .frow, .brand-tiles { grid-template-columns: 1fr; }
     .frow { gap: 36px; padding: 40px 0; }
     .frow.flip .frow-mock { order: 0; }
     .frow-text h3 { font-size: 27px; }
@@ -778,39 +786,6 @@
       </div>
     </div>
 
-    <div class="frow">
-      <div class="frow-text">
-        <div class="frow-eyebrow">Your Name, Your Brand</div>
-        <h3>It's your shul's app, not ours</h3>
-        <p>Your logo, your colors, your fonts, your name on the App Store — a standalone app that feels like it was built for your community alone, because it was.</p>
-        <ul class="fr-list">
-          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Published under your shul's name</li>
-          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Palette and type drawn from your brand</li>
-        </ul>
-      </div>
-      <div class="frow-mock">
-        <div class="screen-mock" role="img" aria-label="Examples of the app themed for different synagogues">
-          <div class="sm-bar"><span>9:41</span><span>&#9679;&#9679;&#9679;</span></div>
-          <div class="sm-head"><div class="sm-eyebrow">One app</div><div class="sm-title">Every shul's own</div></div>
-          <div class="sm-body">
-            <div class="brandlets">
-              <div class="brandlet" style="background:#fdf6e9; border-color:rgba(196,123,43,0.25);">
-                <span class="mark" style="background:#c47b2b; color:#fdf6e9;">K</span>
-                <span><span class="nm" style="color:#4a2c0a;">Kehillat Shalom</span><span class="sb" style="color:#9a856a;">Warm &middot; Parchment</span></span>
-              </div>
-              <div class="brandlet" style="background:#fafaf9; border-color:rgba(30,58,95,0.22);">
-                <span class="mark" style="background:#c9a227; color:#172d4a;">B</span>
-                <span><span class="nm" style="color:#1e3a5f;">Beth Israel</span><span class="sb" style="color:#6b7280;">Navy &middot; Gold</span></span>
-              </div>
-              <div class="brandlet" style="background:#f6f8f5; border-color:rgba(90,122,82,0.28);">
-                <span class="mark" style="background:#5a7a52; color:#f6f8f5;">H</span>
-                <span><span class="nm" style="color:#2f4029;">Har Tzion</span><span class="sb" style="color:#7d8b78;">Sage &middot; Stone</span></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -867,6 +842,30 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="brandsec" id="brand">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>It's your shul's app, not ours</h2>
+      <p>Your logo, your colors, your fonts, your name on the App Store — a standalone app that feels like it was built for your community alone, because it was.</p>
+    </div>
+    <div class="brand-tiles">
+      <div class="brandlet" style="background:#fdf6e9; border-color:rgba(196,123,43,0.25);">
+        <span class="mark" style="background:#c47b2b; color:#fdf6e9;">K</span>
+        <span><span class="nm" style="color:#4a2c0a;">Kehillat Shalom</span><span class="sb" style="color:#9a856a;">Warm &middot; Parchment</span></span>
+      </div>
+      <div class="brandlet" style="background:#fafaf9; border-color:rgba(30,58,95,0.22);">
+        <span class="mark" style="background:#c9a227; color:#172d4a;">B</span>
+        <span><span class="nm" style="color:#1e3a5f;">Beth Israel</span><span class="sb" style="color:#6b7280;">Navy &middot; Gold</span></span>
+      </div>
+      <div class="brandlet" style="background:#f6f8f5; border-color:rgba(90,122,82,0.28);">
+        <span class="mark" style="background:#5a7a52; color:#f6f8f5;">H</span>
+        <span><span class="nm" style="color:#2f4029;">Har Tzion</span><span class="sb" style="color:#7d8b78;">Sage &middot; Stone</span></span>
+      </div>
+    </div>
+    <p class="brand-note">One codebase, many communities — every shul gets its own app on the Apple App Store and Google Play, under its own name. Members never see ours.</p>
   </div>
 </section>
 
