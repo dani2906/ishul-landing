@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>iShul — Your shul's own app</title>
-<meta name="description" content="iShul unites your community around your synagogue — one custom-branded app where members help each other, learn Torah together, and participate in shul life, all at the same time." />
+<meta name="description" content="iShul unites your community around your synagogue — one custom-branded app where members help each other, learn Torah together, donate and sponsor events, and participate in shul life, all at the same time." />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 <meta property="og:title" content="iShul — Your shul's own app" />
 <meta property="og:description" content="iShul unites your community around your synagogue — one app where members help each other, learn Torah together, and participate in shul life." />
@@ -290,6 +290,52 @@
   .site-card .h { font-family: var(--serif); font-weight: 700; font-size: 10px; }
   .site-card .p { font-size: 7.5px; color: var(--muted); line-height: 1.5; }
 
+  /* ── Giving ── */
+  .giving { background: var(--parchment-dk); }
+  .give-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 52px; align-items: center; }
+  .give-list { list-style: none; margin-top: 26px; }
+  .give-list li { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px; }
+  .give-list .tick {
+    flex: none; width: 26px; height: 26px; border-radius: 50%;
+    background: rgba(90,122,82,0.14); display: flex; align-items: center; justify-content: center; margin-top: 2px;
+  }
+  .give-list .tick svg { width: 14px; height: 14px; stroke: var(--sage); }
+  .give-list .t { display: block; font-family: var(--sans); font-weight: 700; font-size: 15px; }
+  .give-list .d { display: block; font-size: 14px; color: var(--muted); margin-top: 2px; }
+  .give-intro { font-size: 16px; color: var(--muted); }
+
+  .sheet-mock {
+    max-width: 320px; margin: 0 auto; background: var(--parchment);
+    border: 1px solid var(--border); border-top-left-radius: 24px; border-top-right-radius: 24px;
+    border-radius: 24px; overflow: hidden; box-shadow: 0 18px 44px rgba(26,16,8,0.20);
+  }
+  .sheet-grab { display: flex; justify-content: center; padding: 10px 0 2px; }
+  .sheet-grab span { width: 38px; height: 4px; border-radius: 999px; background: var(--border); }
+  .sheet-body { padding: 12px 20px 22px; }
+  .sheet-eyebrow { font-size: 9px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+  .sheet-title { font-family: var(--serif); font-weight: 700; font-size: 22px; margin: 4px 0 2px; }
+  .sheet-meta { font-size: 11px; color: var(--muted); margin-bottom: 16px; }
+  .amounts { display: flex; gap: 8px; margin-bottom: 10px; }
+  .amt {
+    flex: 1; text-align: center; background: var(--white); border: 1px solid var(--border);
+    border-radius: 12px; padding: 10px 0; font-family: var(--serif); font-weight: 700; font-size: 16px;
+  }
+  .amt.on { background: var(--amber); color: var(--parchment); border-color: var(--amber); }
+  .amt-wide {
+    background: var(--white); border: 1px solid var(--border); border-radius: 12px;
+    padding: 10px 12px; font-size: 11px; color: var(--muted); margin-bottom: 14px;
+  }
+  .dedication {
+    background: var(--white); border: 1px solid var(--border); border-radius: 12px;
+    padding: 10px 12px; font-size: 11px; margin-bottom: 16px;
+  }
+  .dedication .lbl { font-size: 8px; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 3px; }
+  .sheet-btn {
+    background: var(--sage); color: var(--parchment); text-align: center;
+    font-weight: 900; font-size: 14px; padding: 14px 0; border-radius: 16px;
+  }
+  .sheet-secure { text-align: center; font-size: 9px; color: var(--muted); margin-top: 10px; }
+
   /* ── Founding offer ── */
   .offer { background: var(--parchment-dk); }
   .offer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 760px; margin: 0 auto; }
@@ -336,7 +382,8 @@
     .hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .hero { padding: 56px 0 48px; }
     h1 { font-size: 42px; }
-    .feature-grid, .steps, .pillars, .duo, .offer-grid { grid-template-columns: 1fr; }
+    .feature-grid, .steps, .pillars, .duo, .offer-grid, .give-grid { grid-template-columns: 1fr; }
+    .give-grid { gap: 40px; }
     .nav-links a:not(.btn) { display: none; }
     section { padding: 64px 0; }
   }
@@ -362,6 +409,7 @@
     <div class="nav-links">
       <a href="#community">Community</a>
       <a href="#features">Features</a>
+      <a href="#giving">Giving</a>
       <a href="#how">How it works</a>
       <a class="btn btn-primary" href="mailto:Dimitry@YaiDevelopment.com">Get in touch</a>
     </div>
@@ -497,7 +545,7 @@
       <div class="duo-card">
         <span class="duo-tag included">Included with every app</span>
         <h3>Your content dashboard</h3>
-        <p>Update events, prayer times, announcements, and classes from one simple dashboard — no technical skills needed. Change it once, and the whole community sees it instantly in the app.</p>
+        <p>Update events, prayer times, announcements, and classes from one simple dashboard — and see donations and sponsorships as they arrive. No technical skills needed: change it once, and the whole community sees it instantly in the app.</p>
         <div class="browser" role="img" aria-label="Preview of the iShul admin dashboard">
           <div class="browser-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="addr">dashboard.ishul.org</span></div>
           <div class="dash">
@@ -507,6 +555,7 @@
               <div class="item">Schedule</div>
               <div class="item">Board</div>
               <div class="item">Learning</div>
+              <div class="item">Donations</div>
             </div>
             <div class="dash-main">
               <div class="head"><span class="t">Events</span><span class="add">+ New Event</span></div>
@@ -535,6 +584,60 @@
               <div class="site-card"><div class="h">Events</div><div class="p">Dinners, classes &amp; holiday programs</div></div>
               <div class="site-card"><div class="h">About</div><div class="p">Our rabbi, our story, our community</div></div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="giving" id="giving">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Giving, made effortless</h2>
+      <p>Members can donate and sponsor events directly in the app — no envelopes, no forms, no friction.</p>
+    </div>
+    <div class="give-grid">
+      <div>
+        <p class="give-intro">When supporting the shul is as easy as tapping a button, more people do it — and every gift stays connected to the community life it supports.</p>
+        <ul class="give-list">
+          <li>
+            <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><span class="t">Donate in a tap</span><span class="d">Give from the app in seconds — one-time or recurring, from anywhere.</span></span>
+          </li>
+          <li>
+            <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><span class="t">Sponsor an event or kiddush</span><span class="d">Members sponsor the Shabbat kiddush, a shiur, or a holiday program right from the event itself.</span></span>
+          </li>
+          <li>
+            <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><span class="t">Dedicate a gift</span><span class="d">In honor of a simcha or in memory of a loved one — with the dedication shown to the community.</span></span>
+          </li>
+          <li>
+            <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span><span class="t">Track it all in your dashboard</span><span class="d">See every donation and sponsorship as it comes in, alongside the event it belongs to.</span></span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div class="sheet-mock" role="img" aria-label="Preview of the in-app sponsorship sheet">
+          <div class="sheet-grab"><span></span></div>
+          <div class="sheet-body">
+            <div class="sheet-eyebrow">Sponsor this event</div>
+            <div class="sheet-title">Shabbat Kiddush</div>
+            <div class="sheet-meta">Aug 15 &middot; After Shacharit &middot; Social Hall</div>
+            <div class="amounts">
+              <div class="amt">$54</div>
+              <div class="amt on">$180</div>
+              <div class="amt">$360</div>
+            </div>
+            <div class="amt-wide">Other amount</div>
+            <div class="dedication">
+              <span class="lbl">Dedication</span>
+              In honor of our daughter's bat mitzvah
+            </div>
+            <div class="sheet-btn">Sponsor &middot; $180</div>
+            <div class="sheet-secure">Secure payment &middot; Receipt emailed to you</div>
           </div>
         </div>
       </div>
