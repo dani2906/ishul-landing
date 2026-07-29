@@ -47,7 +47,8 @@
 
   /* ── B"SD strip ── */
   .bsd {
-    text-align: right; padding: 10px 0 0;
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 10px 0 0;
     font-family: var(--hebrew); font-size: 13px; color: var(--muted);
   }
 
@@ -322,7 +323,10 @@
 </head>
 <body>
 
-<div class="wrap bsd" aria-label="B'siyata Dishmaya">בס״ד</div>
+<div class="wrap bsd">
+  <span id="heb-date" dir="rtl"></span>
+  <span aria-label="B'siyata Dishmaya">בס״ד</span>
+</div>
 
 <nav>
   <div class="wrap nav-inner">
@@ -560,6 +564,30 @@
     <p>&copy; 2026 iShul &middot; <a href="mailto:hello@ishul.org">hello@ishul.org</a></p>
   </div>
 </footer>
+
+<script>
+  // Today's Hebrew date with traditional letter numerals, e.g. ט״ו באב תשפ״ו
+  (function () {
+    function toHebNum(n) {
+      var ones = ['','א','ב','ג','ד','ה','ו','ז','ח','ט'];
+      var tens = ['','י','כ','ל','מ','נ','ס','ע','פ','צ'];
+      var hundreds = ['','ק','ר','ש','ת','תק','תר','תש','תת','תתק'];
+      var s = '';
+      n = n % 1000;
+      s += hundreds[Math.floor(n / 100)];
+      var r = n % 100;
+      if (r === 15) s += 'טו';
+      else if (r === 16) s += 'טז';
+      else { s += tens[Math.floor(r / 10)]; s += ones[r % 10]; }
+      return s.length > 1 ? s.slice(0, -1) + '\u05F4' + s.slice(-1) : s + '\u05F3';
+    }
+    var parts = new Intl.DateTimeFormat('he-u-ca-hebrew', { day: 'numeric', month: 'long', year: 'numeric' })
+      .formatToParts(new Date());
+    var get = function (t) { var p = parts.find(function (x) { return x.type === t; }); return p ? p.value : ''; };
+    document.getElementById('heb-date').textContent =
+      toHebNum(+get('day')) + ' ב' + get('month') + ' ' + toHebNum(+get('year'));
+  })();
+</script>
 
 </body>
 </html>
