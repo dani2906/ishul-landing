@@ -203,18 +203,6 @@
   .section-head p { color: var(--muted); font-size: 16px; }
 
   .features { background: var(--parchment-dk); }
-  .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .feature-card {
-    background: var(--white); border: 1px solid var(--border); border-radius: 18px;
-    padding: 28px 24px; box-shadow: var(--card-shadow);
-  }
-  .feature-icon {
-    width: 46px; height: 46px; border-radius: 14px; background: var(--amber-glow);
-    display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
-  }
-  .feature-icon svg { width: 22px; height: 22px; stroke: var(--amber); }
-  .feature-card h3 { font-family: var(--serif); font-weight: 700; font-size: 22px; margin-bottom: 6px; }
-  .feature-card p { font-size: 14px; color: var(--muted); }
 
   .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .step { text-align: center; padding: 0 12px; }
@@ -290,51 +278,132 @@
   .site-card .h { font-family: var(--serif); font-weight: 700; font-size: 10px; }
   .site-card .p { font-size: 7.5px; color: var(--muted); line-height: 1.5; }
 
-  /* ── Giving ── */
-  .giving { background: var(--parchment-dk); }
-  .give-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 52px; align-items: center; }
-  .give-list { list-style: none; margin-top: 26px; }
-  .give-list li { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px; }
-  .give-list .tick {
-    flex: none; width: 26px; height: 26px; border-radius: 50%;
-    background: rgba(90,122,82,0.14); display: flex; align-items: center; justify-content: center; margin-top: 2px;
+  /* ── Feature showcase rows ── */
+  .frow {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    padding: 52px 0; border-top: 1px solid var(--border);
   }
-  .give-list .tick svg { width: 14px; height: 14px; stroke: var(--sage); }
-  .give-list .t { display: block; font-family: var(--sans); font-weight: 700; font-size: 15px; }
-  .give-list .d { display: block; font-size: 14px; color: var(--muted); margin-top: 2px; }
-  .give-intro { font-size: 16px; color: var(--muted); }
+  .frow:first-of-type { border-top: none; padding-top: 8px; }
+  .frow.flip .frow-mock { order: -1; }
+  .frow-eyebrow {
+    font-size: 11px; font-weight: 900; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--amber); margin-bottom: 10px;
+  }
+  .frow-text h3 { font-family: var(--serif); font-weight: 700; font-size: 32px; line-height: 1.15; margin-bottom: 12px; }
+  .frow-text > p { font-size: 16px; color: var(--muted); }
+  .fr-list { list-style: none; margin-top: 20px; display: flex; flex-direction: column; gap: 12px; }
+  .fr-list li { display: flex; gap: 12px; align-items: center; font-weight: 700; font-size: 15px; }
+  .tick {
+    flex: none; width: 24px; height: 24px; border-radius: 50%;
+    background: rgba(90,122,82,0.14); display: flex; align-items: center; justify-content: center;
+  }
+  .tick svg { width: 13px; height: 13px; stroke: var(--sage); }
 
-  .sheet-mock {
-    max-width: 320px; margin: 0 auto; background: var(--parchment);
-    border: 1px solid var(--border); border-top-left-radius: 24px; border-top-right-radius: 24px;
-    border-radius: 24px; overflow: hidden; box-shadow: 0 18px 44px rgba(26,16,8,0.20);
+  /* Shared phone-screen mockup shell */
+  .screen-mock {
+    max-width: 296px; margin: 0 auto; background: var(--parchment);
+    border: 1px solid var(--border); border-radius: 26px; overflow: hidden;
+    box-shadow: 0 18px 44px rgba(26,16,8,0.18);
   }
-  .sheet-grab { display: flex; justify-content: center; padding: 10px 0 2px; }
-  .sheet-grab span { width: 38px; height: 4px; border-radius: 999px; background: var(--border); }
-  .sheet-body { padding: 12px 20px 22px; }
-  .sheet-eyebrow { font-size: 9px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
-  .sheet-title { font-family: var(--serif); font-weight: 700; font-size: 22px; margin: 4px 0 2px; }
-  .sheet-meta { font-size: 11px; color: var(--muted); margin-bottom: 16px; }
-  .amounts { display: flex; gap: 8px; margin-bottom: 10px; }
-  .amt {
-    flex: 1; text-align: center; background: var(--white); border: 1px solid var(--border);
-    border-radius: 12px; padding: 10px 0; font-family: var(--serif); font-weight: 700; font-size: 16px;
-  }
-  .amt.on { background: var(--amber); color: var(--parchment); border-color: var(--amber); }
-  .amt-wide {
+  .sm-bar { display: flex; justify-content: space-between; padding: 12px 18px 2px; font-size: 10px; font-weight: 700; }
+  .sm-head { padding: 6px 16px 10px; }
+  .sm-eyebrow { font-size: 9px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+  .sm-title { font-family: var(--serif); font-weight: 700; font-size: 21px; margin-top: 2px; }
+  .sm-body { padding: 0 14px 18px; }
+  .sm-grab { display: flex; justify-content: center; padding: 10px 0 2px; }
+  .sm-grab span { width: 38px; height: 4px; border-radius: 999px; background: var(--border); }
+  .sm-meta { font-size: 11px; color: var(--muted); }
+
+  /* Prayer times list */
+  .ptime {
+    display: flex; justify-content: space-between; align-items: center;
     background: var(--white); border: 1px solid var(--border); border-radius: 12px;
-    padding: 10px 12px; font-size: 11px; color: var(--muted); margin-bottom: 14px;
+    padding: 10px 12px; margin-bottom: 7px; font-size: 12px; font-weight: 700;
   }
+  .ptime .when { font-family: var(--serif); font-size: 14px; }
+  .ptime .need { font-size: 8px; font-weight: 900; letter-spacing: .5px; padding: 3px 7px; border-radius: 999px; background: rgba(122,59,30,0.12); color: var(--clay); }
+
+  /* Shabbat card */
+  .shab {
+    background: var(--white); border: 1px solid var(--border); border-radius: 14px;
+    padding: 14px; margin-bottom: 8px;
+  }
+  .shab .row { display: flex; justify-content: space-between; align-items: baseline; padding: 5px 0; font-size: 12px; }
+  .shab .row + .row { border-top: 1px solid var(--border); }
+  .shab .lbl { color: var(--muted); }
+  .shab .val { font-family: var(--serif); font-weight: 700; font-size: 15px; }
+  .parasha {
+    background: var(--parchment-dk); border-radius: 14px; padding: 14px; text-align: center;
+  }
+  .parasha .he { font-family: var(--hebrew); font-size: 20px; direction: rtl; }
+  .parasha .en { font-family: var(--serif); font-weight: 700; font-size: 16px; margin-top: 2px; }
+  .parasha .ref { font-size: 10px; color: var(--muted); margin-top: 2px; }
+
+  /* Board chips + posts */
+  .chips { display: flex; gap: 6px; margin-bottom: 10px; flex-wrap: wrap; }
+  .chip {
+    font-size: 9px; font-weight: 900; padding: 5px 10px; border-radius: 999px;
+    background: var(--white); border: 1px solid var(--border); color: var(--muted);
+  }
+  .chip.on { background: var(--amber); border-color: var(--amber); color: var(--parchment); }
+  .post {
+    background: var(--white); border: 1px solid var(--border); border-radius: 12px;
+    border-left: 3px solid var(--clay); padding: 10px 12px; margin-bottom: 7px;
+  }
+  .post.jobs { border-left-color: var(--blue); }
+  .post.sale { border-left-color: var(--sage); }
+  .post .t { font-weight: 700; font-size: 12px; }
+  .post .m { font-size: 9.5px; color: var(--muted); margin-top: 2px; }
+
+  /* Learn video row */
+  .vid {
+    display: flex; gap: 10px; align-items: center;
+    background: var(--white); border: 1px solid var(--border); border-radius: 12px;
+    padding: 9px 11px; margin-bottom: 7px;
+  }
+  .vid .play {
+    flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--amber-glow);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .vid .play svg { width: 13px; height: 13px; fill: var(--amber); }
+  .vid .t { display: block; font-weight: 700; font-size: 11.5px; line-height: 1.3; }
+  .vid .m { display: block; font-size: 9px; color: var(--muted); margin-top: 2px; }
+
+  /* Sponsorship tiers */
+  .tier {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--white); border: 1px solid var(--border); border-radius: 12px;
+    padding: 10px 12px; margin-bottom: 7px;
+  }
+  .tier.on { border-color: var(--amber); background: var(--amber-glow); }
+  .tier .ic { flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--amber-glow); display: flex; align-items: center; justify-content: center; font-size: 12px; }
+  .tier .t { display: block; font-weight: 700; font-size: 11.5px; }
+  .tier .d { display: block; font-size: 9px; color: var(--muted); margin-top: 1px; }
+  .tier .amt { margin-left: auto; font-family: var(--serif); font-weight: 700; font-size: 16px; color: var(--amber); }
   .dedication {
     background: var(--white); border: 1px solid var(--border); border-radius: 12px;
-    padding: 10px 12px; font-size: 11px; margin-bottom: 16px;
+    padding: 9px 11px; font-size: 10.5px; margin-bottom: 12px;
   }
   .dedication .lbl { font-size: 8px; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 3px; }
   .sheet-btn {
     background: var(--sage); color: var(--parchment); text-align: center;
-    font-weight: 900; font-size: 14px; padding: 14px 0; border-radius: 16px;
+    font-weight: 900; font-size: 13px; padding: 13px 0; border-radius: 14px;
   }
-  .sheet-secure { text-align: center; font-size: 9px; color: var(--muted); margin-top: 10px; }
+  .sheet-secure { text-align: center; font-size: 9px; color: var(--muted); margin-top: 9px; }
+
+  /* White-label palette tiles */
+  .brandlets { display: flex; flex-direction: column; gap: 10px; }
+  .brandlet {
+    display: flex; align-items: center; gap: 12px; border-radius: 14px;
+    padding: 12px 14px; border: 1px solid var(--border);
+  }
+  .brandlet .mark {
+    flex: none; width: 34px; height: 34px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-weight: 700; font-size: 15px;
+  }
+  .brandlet .nm { display: block; font-family: var(--serif); font-weight: 700; font-size: 15px; }
+  .brandlet .sb { display: block; font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; margin-top: 1px; }
 
   /* ── Founding offer ── */
   .offer { background: var(--parchment-dk); }
@@ -382,8 +451,10 @@
     .hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .hero { padding: 56px 0 48px; }
     h1 { font-size: 42px; }
-    .feature-grid, .steps, .pillars, .duo, .offer-grid, .give-grid { grid-template-columns: 1fr; }
-    .give-grid { gap: 40px; }
+    .steps, .pillars, .duo, .offer-grid, .frow { grid-template-columns: 1fr; }
+    .frow { gap: 36px; padding: 40px 0; }
+    .frow.flip .frow-mock { order: 0; }
+    .frow-text h3 { font-size: 27px; }
     .nav-links a:not(.btn) { display: none; }
     section { padding: 64px 0; }
   }
@@ -498,38 +569,246 @@
   <div class="wrap">
     <div class="section-head">
       <h2>Everything your shul needs</h2>
-      <p>A warm, modern app your whole community will actually use — designed around synagogue life.</p>
+      <p>A warm, modern app your whole community will actually use — every screen designed around synagogue life.</p>
     </div>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="3"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-        <h3>Events &amp; RSVPs</h3>
-        <p>Shabbat dinners, holiday programs, and classes — members browse, RSVP, and share in a tap.</p>
+    <div class="frow">
+      <div class="frow-text">
+        <div class="frow-eyebrow">Events &amp; RSVPs</div>
+        <h3>Every simcha and program, one tap away</h3>
+        <p>Shabbat dinners, holiday programs, and classes — members browse what's coming up, RSVP for their family, and share it with a friend.</p>
+        <ul class="fr-list">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>RSVP with a guest count</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>See who else is attending</li>
+        </ul>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg></div>
-        <h3>Prayer Times &amp; Minyanim</h3>
-        <p>Daily davening schedule and zmanim, front and center — so no one misses minyan.</p>
+      <div class="frow-mock">
+        <div class="screen-mock" role="img" aria-label="App screen showing upcoming events with RSVP">
+          <div class="sm-bar"><span>9:41</span><span>&#9679;&#9679;&#9679;</span></div>
+          <div class="sm-head"><div class="sm-eyebrow">Upcoming</div><div class="sm-title">Events</div></div>
+          <div class="sm-body">
+            <div class="mini-card" style="margin: 0 0 8px;">
+              <div class="mini-date"><div class="d">14</div><div class="m">Aug</div></div>
+              <div class="mini-body"><div class="t">Friday Night Dinner</div><div class="s">7:30 PM &middot; Social Hall</div></div>
+              <div class="pill pill-sage">RSVP&nbsp;&#10003;</div>
+            </div>
+            <div class="mini-card" style="margin: 0 0 8px;">
+              <div class="mini-date"><div class="d">17</div><div class="m">Aug</div></div>
+              <div class="mini-body"><div class="t">Weekly Torah Class</div><div class="s">8:00 PM &middot; Library</div></div>
+              <div class="pill pill-blue">Learning</div>
+            </div>
+            <div class="mini-card" style="margin: 0;">
+              <div class="mini-date"><div class="d">22</div><div class="m">Aug</div></div>
+              <div class="mini-body"><div class="t">Shabbat Evening Service</div><div class="s">6:45 PM &middot; Sanctuary</div></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 4l9 5.5"/><path d="M5 11v8h14v-8"/><path d="M10 19v-5h4v5"/></svg></div>
-        <h3>Shabbat &amp; Holiday Schedule</h3>
-        <p>Candle lighting, havdalah, and the full calendar of services for Shabbat and yamim tovim.</p>
+    </div>
+
+    <div class="frow flip">
+      <div class="frow-text">
+        <div class="frow-eyebrow">Prayer Times &amp; Minyanim</div>
+        <h3>So no one misses a minyan</h3>
+        <p>The next tefillah is always front and center, with the full daily davening schedule and zmanim — and a nudge when a minyan still needs people.</p>
+        <ul class="fr-list">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Next prayer, always visible</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>"Needs minyan" alerts</li>
+        </ul>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-        <h3>Community Board</h3>
-        <p>Announcements, simchas, and community needs — a living bulletin board in everyone's pocket.</p>
+      <div class="frow-mock">
+        <div class="screen-mock" role="img" aria-label="App screen showing daily prayer times">
+          <div class="sm-bar"><span>9:41</span><span>&#9679;&#9679;&#9679;</span></div>
+          <div class="hero-card" style="margin: 4px 14px 12px;">
+            <div class="orb"></div>
+            <div class="label">Next Prayer</div>
+            <div class="title">Mincha</div>
+            <div class="meta">Today &middot; 6:45 PM &middot; Main Sanctuary</div>
+          </div>
+          <div class="sm-body">
+            <div class="ptime"><span>Shacharit</span><span class="when">7:00 AM</span></div>
+            <div class="ptime"><span>Mincha</span><span class="when">6:45 PM</span></div>
+            <div class="ptime"><span>Maariv</span><span><span class="need">Needs 2</span>&nbsp;&nbsp;<span class="when">8:15 PM</span></span></div>
+          </div>
+        </div>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg></div>
-        <h3>Torah Learning</h3>
-        <p>Shiurim, weekly parsha content, and learning programs, organized and easy to join.</p>
+    </div>
+
+    <div class="frow">
+      <div class="frow-text">
+        <div class="frow-eyebrow">Shabbat &amp; Holidays</div>
+        <h3>Shabbat, always at your fingertips</h3>
+        <p>Candle lighting and havdalah times, the week's parsha, and the full calendar of services for Shabbat and every yom tov.</p>
+        <ul class="fr-list">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Zmanim for your location</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Hebrew and Gregorian dates</li>
+        </ul>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><line x1="10" y1="19" x2="14" y2="19"/></svg></div>
-        <h3>Your Name, Your Brand</h3>
-        <p>Your logo, your colors, your fonts — a standalone app published under your shul's own identity.</p>
+      <div class="frow-mock">
+        <div class="screen-mock" role="img" aria-label="App screen showing Shabbat times and the weekly Torah portion">
+          <div class="sm-bar"><span>9:41</span><span>&#9679;&#9679;&#9679;</span></div>
+          <div class="sm-head"><div class="sm-eyebrow">This Shabbat</div><div class="sm-title">Aug 14–15</div></div>
+          <div class="sm-body">
+            <div class="shab">
+              <div class="row"><span class="lbl">Candle Lighting</span><span class="val">7:12 PM</span></div>
+              <div class="row"><span class="lbl">Kabbalat Shabbat</span><span class="val">7:30 PM</span></div>
+              <div class="row"><span class="lbl">Shacharit</span><span class="val">9:00 AM</span></div>
+              <div class="row"><span class="lbl">Havdalah</span><span class="val">8:14 PM</span></div>
+            </div>
+            <div class="parasha">
+              <div class="he">וַיִּקְרָא</div>
+              <div class="en">Parashat Vayikra</div>
+              <div class="ref">Leviticus 1:1–5:26</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="frow flip">
+      <div class="frow-text">
+        <div class="frow-eyebrow">Community Board</div>
+        <h3>Where members show up for each other</h3>
+        <p>A living bulletin board for announcements, simchas, and real needs — babysitting, a tutor, a job, a table to give away.</p>
+        <ul class="fr-list">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Post a need or an offer</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Reply privately in the app</li>
+        </ul>
+      </div>
+      <div class="frow-mock">
+        <div class="screen-mock" role="img" aria-label="App screen showing the community board">
+          <div class="sm-bar"><span>9:41</span><span>&#9679;&#9679;&#9679;</span></div>
+          <div class="sm-head"><div class="sm-eyebrow">Community</div><div class="sm-title">Board</div></div>
+          <div class="sm-body">
+            <div class="chips">
+              <span class="chip on">All</span><span class="chip">Help</span><span class="chip">Jobs</span><span class="chip">For Sale</span>
+            </div>
+            <div class="post">
+              <div class="t">Need a babysitter for Friday evening</div>
+              <div class="m">Rivka L. &middot; Friday, 6–10 PM &middot; 2h ago</div>
+            </div>
+            <div class="post sale">
+              <div class="t">Selling solid wood dining table</div>
+              <div class="m">David K. &middot; Great condition &middot; $350</div>
+            </div>
+            <div class="post jobs">
+              <div class="t">Part-time office assistant needed</div>
+              <div class="m">Shul office &middot; 15 hrs/week &middot; Paid</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="frow">
+      <div class="frow-text">
+        <div class="frow-eyebrow">Torah Learning</div>
+        <h3>Torah that travels with them</h3>
+        <p>The weekly parsha, short video shiurim, and articles from your rabbi — organized so learning fits into a commute or a coffee break.</p>
+        <ul class="fr-list">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>A new shiur each day</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Parsha summaries and sources</li>
+        </ul>
+      </div>
+      <div class="frow-mock">
+        <div class="screen-mock" role="img" aria-label="App screen showing Torah learning content">
+          <div class="sm-bar"><span>9:41</span><span>&#9679;&#9679;&#9679;</span></div>
+          <div class="sm-head"><div class="sm-eyebrow">This Week</div><div class="sm-title">Learn</div></div>
+          <div class="sm-body">
+            <div class="parasha" style="margin-bottom: 10px;">
+              <div class="he">וַיִּקְרָא</div>
+              <div class="en">Vayikra</div>
+              <div class="ref">Leviticus 1:1–5:26</div>
+            </div>
+            <div class="vid">
+              <span class="play"><svg viewBox="0 0 24 24"><polygon points="7 4 20 12 7 20"/></svg></span>
+              <span><span class="t">The Meaning of Sacrifice in Modern Life</span><span class="m">Rabbi Sacks &middot; 5 min</span></span>
+            </div>
+            <div class="vid">
+              <span class="play"><svg viewBox="0 0 24 24"><polygon points="7 4 20 12 7 20"/></svg></span>
+              <span><span class="t">Why Do We Wash Our Hands?</span><span class="m">Rabbi Sacks &middot; 5 min</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="frow flip" id="giving">
+      <div class="frow-text">
+        <div class="frow-eyebrow">Donations &amp; Sponsorships</div>
+        <h3>Giving, made effortless</h3>
+        <p>Members donate and sponsor events directly in the app — a kiddush, a shiur, a holiday program — with no envelopes, forms, or friction.</p>
+        <ul class="fr-list">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>One-time or recurring gifts</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Dedications in honor or memory</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Every gift tracked in your dashboard</li>
+        </ul>
+      </div>
+      <div class="frow-mock">
+        <div class="screen-mock" role="img" aria-label="App sheet for sponsoring an event">
+          <div class="sm-grab"><span></span></div>
+          <div class="sm-head">
+            <div class="sm-eyebrow">Sponsor this event</div>
+            <div class="sm-title">Shabbat Kiddush</div>
+            <div class="sm-meta">Aug 15 &middot; After Shacharit</div>
+          </div>
+          <div class="sm-body">
+            <div class="tier on">
+              <span class="ic">&#127863;</span>
+              <span><span class="t">Kiddush Sponsor</span><span class="d">In honor or memory of a loved one</span></span>
+              <span class="amt">$180</span>
+            </div>
+            <div class="tier">
+              <span class="ic">&#127941;</span>
+              <span><span class="t">Gold Sponsor</span><span class="d">Named recognition at the event</span></span>
+              <span class="amt">$360</span>
+            </div>
+            <div class="tier">
+              <span class="ic">&#11088;</span>
+              <span><span class="t">Platinum Sponsor</span><span class="d">Premier recognition + dedication</span></span>
+              <span class="amt">$613</span>
+            </div>
+            <div class="dedication">
+              <span class="lbl">Dedication</span>
+              In honor of our daughter's bat mitzvah
+            </div>
+            <div class="sheet-btn">Sponsor &middot; $180</div>
+            <div class="sheet-secure">Secure payment &middot; Receipt emailed to you</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="frow">
+      <div class="frow-text">
+        <div class="frow-eyebrow">Your Name, Your Brand</div>
+        <h3>It's your shul's app, not ours</h3>
+        <p>Your logo, your colors, your fonts, your name on the App Store — a standalone app that feels like it was built for your community alone, because it was.</p>
+        <ul class="fr-list">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Published under your shul's name</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Palette and type drawn from your brand</li>
+        </ul>
+      </div>
+      <div class="frow-mock">
+        <div class="screen-mock" role="img" aria-label="Examples of the app themed for different synagogues">
+          <div class="sm-bar"><span>9:41</span><span>&#9679;&#9679;&#9679;</span></div>
+          <div class="sm-head"><div class="sm-eyebrow">One app</div><div class="sm-title">Every shul's own</div></div>
+          <div class="sm-body">
+            <div class="brandlets">
+              <div class="brandlet" style="background:#fdf6e9; border-color:rgba(196,123,43,0.25);">
+                <span class="mark" style="background:#c47b2b; color:#fdf6e9;">K</span>
+                <span><span class="nm" style="color:#4a2c0a;">Kehillat Shalom</span><span class="sb" style="color:#9a856a;">Warm &middot; Parchment</span></span>
+              </div>
+              <div class="brandlet" style="background:#fafaf9; border-color:rgba(30,58,95,0.22);">
+                <span class="mark" style="background:#c9a227; color:#172d4a;">B</span>
+                <span><span class="nm" style="color:#1e3a5f;">Beth Israel</span><span class="sb" style="color:#6b7280;">Navy &middot; Gold</span></span>
+              </div>
+              <div class="brandlet" style="background:#f6f8f5; border-color:rgba(90,122,82,0.28);">
+                <span class="mark" style="background:#5a7a52; color:#f6f8f5;">H</span>
+                <span><span class="nm" style="color:#2f4029;">Har Tzion</span><span class="sb" style="color:#7d8b78;">Sage &middot; Stone</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -584,60 +863,6 @@
               <div class="site-card"><div class="h">Events</div><div class="p">Dinners, classes &amp; holiday programs</div></div>
               <div class="site-card"><div class="h">About</div><div class="p">Our rabbi, our story, our community</div></div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="giving" id="giving">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Giving, made effortless</h2>
-      <p>Members can donate and sponsor events directly in the app — no envelopes, no forms, no friction.</p>
-    </div>
-    <div class="give-grid">
-      <div>
-        <p class="give-intro">When supporting the shul is as easy as tapping a button, more people do it — and every gift stays connected to the community life it supports.</p>
-        <ul class="give-list">
-          <li>
-            <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span><span class="t">Donate in a tap</span><span class="d">Give from the app in seconds — one-time or recurring, from anywhere.</span></span>
-          </li>
-          <li>
-            <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span><span class="t">Sponsor an event or kiddush</span><span class="d">Members sponsor the Shabbat kiddush, a shiur, or a holiday program right from the event itself.</span></span>
-          </li>
-          <li>
-            <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span><span class="t">Dedicate a gift</span><span class="d">In honor of a simcha or in memory of a loved one — with the dedication shown to the community.</span></span>
-          </li>
-          <li>
-            <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span><span class="t">Track it all in your dashboard</span><span class="d">See every donation and sponsorship as it comes in, alongside the event it belongs to.</span></span>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <div class="sheet-mock" role="img" aria-label="Preview of the in-app sponsorship sheet">
-          <div class="sheet-grab"><span></span></div>
-          <div class="sheet-body">
-            <div class="sheet-eyebrow">Sponsor this event</div>
-            <div class="sheet-title">Shabbat Kiddush</div>
-            <div class="sheet-meta">Aug 15 &middot; After Shacharit &middot; Social Hall</div>
-            <div class="amounts">
-              <div class="amt">$54</div>
-              <div class="amt on">$180</div>
-              <div class="amt">$360</div>
-            </div>
-            <div class="amt-wide">Other amount</div>
-            <div class="dedication">
-              <span class="lbl">Dedication</span>
-              In honor of our daughter's bat mitzvah
-            </div>
-            <div class="sheet-btn">Sponsor &middot; $180</div>
-            <div class="sheet-secure">Secure payment &middot; Receipt emailed to you</div>
           </div>
         </div>
       </div>
