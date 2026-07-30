@@ -413,6 +413,52 @@
     max-width: 620px; margin-left: auto; margin-right: auto;
   }
 
+  /* ── Members-only / privacy ── */
+  .security { background: var(--bark-deep); position: relative; overflow: hidden; }
+  .security .sec-orb {
+    position: absolute; width: 560px; height: 560px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,168,74,0.18) 0%, transparent 70%);
+    top: -220px; left: 50%; transform: translateX(-50%); pointer-events: none;
+  }
+  .security .section-head { position: relative; max-width: 620px; margin-bottom: 44px; }
+  .security .eyebrow { color: var(--amber-light); }
+  .security h2 { color: var(--parchment); }
+  .security .section-head p { color: rgba(253,246,233,0.74); }
+
+  .invite { position: relative; text-align: center; margin-bottom: 52px; }
+  .invite-label {
+    font-size: 11px; font-weight: 900; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--amber-light); margin-bottom: 14px;
+  }
+  .code-boxes { display: flex; justify-content: center; gap: 10px; margin-bottom: 14px; }
+  .code-boxes span {
+    width: 46px; height: 58px; border-radius: 13px;
+    background: rgba(253,246,233,0.07); border: 1px solid rgba(232,168,74,0.38);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-weight: 700; font-size: 27px; color: var(--parchment);
+  }
+  .invite-note { font-size: 13px; color: rgba(253,246,233,0.55); }
+
+  .sec-cards { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .sec-card {
+    background: rgba(253,246,233,0.06); border: 1px solid rgba(232,168,74,0.22);
+    border-radius: 18px; padding: 30px 26px; text-align: center;
+  }
+  .sec-icon {
+    width: 52px; height: 52px; border-radius: 50%; background: rgba(232,168,74,0.16);
+    display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;
+  }
+  .sec-icon svg { width: 24px; height: 24px; stroke: var(--amber-light); }
+  .sec-card h3 {
+    font-family: var(--serif); font-weight: 700; font-size: 22px;
+    color: var(--parchment); margin-bottom: 8px;
+  }
+  .sec-card p { font-size: 14px; color: rgba(253,246,233,0.68); }
+  .sec-note {
+    position: relative; text-align: center; margin: 36px auto 0;
+    max-width: 640px; font-size: 15px; color: rgba(253,246,233,0.58);
+  }
+
   /* ── Founding offer ── */
   .offer { background: var(--parchment-dk); }
   .offer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 760px; margin: 0 auto; }
@@ -459,7 +505,8 @@
     .hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .hero { padding: 56px 0 48px; }
     h1 { font-size: 42px; }
-    .steps, .pillars, .duo, .offer-grid, .frow, .brand-tiles { grid-template-columns: 1fr; }
+    .steps, .pillars, .duo, .offer-grid, .frow, .brand-tiles, .sec-cards { grid-template-columns: 1fr; }
+    .code-boxes span { width: 40px; height: 52px; font-size: 23px; }
     .frow { gap: 36px; padding: 40px 0; }
     .frow.flip .frow-mock { order: 0; }
     .frow-text h3 { font-size: 27px; }
@@ -489,6 +536,7 @@
       <a href="#community">Community</a>
       <a href="#features">Features</a>
       <a href="#giving">Giving</a>
+      <a href="#privacy">Privacy</a>
       <a href="#how">How it works</a>
       <a class="btn btn-primary" href="mailto:Dimitry@YaiDevelopment.com">Get in touch</a>
     </div>
@@ -786,6 +834,42 @@
       </div>
     </div>
 
+  </div>
+</section>
+
+<section class="security" id="privacy">
+  <div class="sec-orb"></div>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Private by design</div>
+      <h2>Members only, by invitation</h2>
+      <p>iShul is not a public social network. Your app is a closed space for your community — no one outside the shul can see your members, your board, or who's coming to dinner.</p>
+    </div>
+    <div class="invite">
+      <div class="invite-label">Invite code</div>
+      <div class="code-boxes" role="img" aria-label="An invite code being entered to join the app">
+        <span>S</span><span>H</span><span>U</span><span>L</span><span>2</span><span>6</span>
+      </div>
+      <div class="invite-note">Issued by your shul &middot; No code, no way in</div>
+    </div>
+    <div class="sec-cards">
+      <div class="sec-card">
+        <div class="sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3"/></svg></div>
+        <h3>Access by invite code</h3>
+        <p>Downloading the app isn't enough. A member gets in only by entering a code your shul gave them — so the app stays your community, and only your community.</p>
+      </div>
+      <div class="sec-card">
+        <div class="sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div>
+        <h3>Members see only members</h3>
+        <p>Posts, needs, simchas, and who's attending are visible inside your shul alone — never public, never searchable on the web, never shared with another community.</p>
+      </div>
+      <div class="sec-card">
+        <div class="sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg></div>
+        <h3>Your list, your control</h3>
+        <p>Issue codes to new families and remove access for anyone who leaves — all from your dashboard, so the membership is always yours to decide.</p>
+      </div>
+    </div>
+    <p class="sec-note">Every member also verifies their own phone number when they join, and each shul's community is kept completely separate from every other.</p>
   </div>
 </section>
 
