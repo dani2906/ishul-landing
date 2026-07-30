@@ -239,7 +239,7 @@
 
   /* ── Sections ── */
   section { padding: 84px 0; }
-  section[id], .ask { scroll-margin-top: 78px; }
+  section[id], .ask, .cta-band[id] { scroll-margin-top: 78px; }
   .section-head { text-align: center; max-width: 560px; margin: 0 auto 52px; }
   h2 { font-family: var(--serif); font-weight: 700; font-size: 40px; line-height: 1.15; margin-bottom: 14px; }
   .section-head p { color: var(--muted); font-size: 16px; }
@@ -536,10 +536,8 @@
   .cta-card h2 { color: var(--parchment); position: relative; }
   .cta-card p { color: var(--amber-light); margin-bottom: 32px; position: relative; }
   .cta-card .btn { position: relative; }
-  .cta-fine {
-    position: relative; margin-top: 18px; margin-bottom: 0 !important;
-    font-size: 13px; color: rgba(253,246,233,0.6) !important;
-  }
+  /* The widget is themed to the card's own background, so it sits flush inside it */
+  .calendly-inline-widget { position: relative; border-radius: 20px; overflow: hidden; }
 
   /* ── Ask a question ── */
   .ask {
@@ -570,9 +568,7 @@
   .ask-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 6px; }
   .ask-actions .btn { font-family: var(--sans); }
   .ask-actions .btn[disabled] { opacity: .55; cursor: default; transform: none; }
-  .ask-status { font-size: 14px; font-weight: 700; color: var(--sage); }
-  .ask-status.err { color: var(--clay); }
-  .ask-status a { color: inherit; }
+  .ask-hint { font-size: 13px; color: var(--muted); }
 
   footer { border-top: 1px solid var(--border); padding: 32px 0; }
   .foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
@@ -591,6 +587,9 @@
     .frow { gap: 36px; padding: 40px 0; }
     .frow.flip .frow-mock { order: 0; }
     .frow-text h3 { font-size: 27px; }
+    .cta-card { padding: 40px 14px; }
+    /* Calendly ships a 320px min-width inline; let it shrink to the card instead */
+    .calendly-inline-widget { min-width: 0 !important; width: 100%; height: 940px !important; }
     .ask { padding: 32px 22px; }
     .ask-row { grid-template-columns: 1fr; gap: 0; }
     .nav-links a:not(.btn) { display: none; }
@@ -622,7 +621,7 @@
       <a href="#giving">Giving</a>
       <a href="#privacy">Privacy</a>
       <a href="#how">How it works</a>
-      <a class="btn btn-primary" href="https://calendly.com/dimitry-yaidevelopment/30min" target="_blank" rel="noopener">Book a call</a>
+      <a class="btn btn-primary" href="#book">Book a call</a>
     </div>
   </div>
 </nav>
@@ -635,7 +634,7 @@
       <h1>Your shul's own app, <em>at a fraction of the price.</em></h1>
       <p class="lede">Not a shared platform with your logo dropped on top. Your congregation gets a standalone app of its own — your name on the App Store, your colors, your members inside and nobody else's. The hard engineering is already built and maintained, so the price is a fraction of a studio's quote.</p>
       <div class="hero-ctas">
-        <a class="btn btn-primary" href="https://calendly.com/dimitry-yaidevelopment/30min" target="_blank" rel="noopener">Book a 30-minute call</a>
+        <a class="btn btn-primary" href="#book">Book a call</a>
         <a class="btn btn-outline" href="#features">See what's inside</a>
       </div>
       <p class="hero-second">
@@ -1125,18 +1124,20 @@
         <p>Shuls four through ten still get half off as founding members of the iShul family.</p>
       </div>
     </div>
-    <p class="offer-note">No commitment needed to reserve your spot — just <a href="https://calendly.com/dimitry-yaidevelopment/30min" target="_blank" rel="noopener">grab a time to talk</a>.</p>
+    <p class="offer-note">No commitment needed to reserve your spot — just <a href="#book">grab a time to talk</a>.</p>
   </div>
 </section>
 
-<div class="cta-band">
+<div class="cta-band" id="book">
   <div class="wrap">
     <div class="cta-card">
       <div class="orb"></div>
       <h2>Ready for an app of your own?</h2>
-      <p>Tell us your shul's name, your colors, and what your community needs — we'll take it from there.</p>
-      <a class="btn btn-primary" href="https://calendly.com/dimitry-yaidevelopment/30min" target="_blank" rel="noopener">Book a 30-minute call</a>
-      <p class="cta-fine">Half an hour, no obligation — we'll walk you through the app and talk about your community.</p>
+      <p>Pick a time that works for you — no obligation. We'll walk you through the app and talk about what your community needs.</p>
+      <!-- Calendly inline widget begin -->
+      <div class="calendly-inline-widget" data-url="https://calendly.com/dimitry-yaidevelopment/30min?hide_gdpr_banner=1&amp;background_color=3a1e06&amp;text_color=ffffff&amp;primary_color=c47b2b" style="min-width:320px;height:700px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <!-- Calendly inline widget end -->
     </div>
 
     <div class="ask" id="ask">
@@ -1147,7 +1148,8 @@
       <form class="ask-form" id="ask-form" action="https://formsubmit.co/Dimitry@YaiDevelopment.com" method="POST">
         <input type="hidden" name="_subject" value="iShul question from ishul.org" />
         <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_captcha" value="true" />
+        <input type="hidden" name="_next" value="https://ishul.org/thanks.html" />
         <!-- Bots fill this; people never see it -->
         <input type="text" name="_honey" class="ask-honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
@@ -1167,7 +1169,7 @@
         </label>
         <div class="ask-actions">
           <button type="submit" class="btn btn-primary">Send question</button>
-          <span class="ask-status" id="ask-status" role="status" aria-live="polite"></span>
+          <span class="ask-hint">One quick &ldquo;I&rsquo;m not a robot&rdquo; check, and it&rsquo;s on its way.</span>
         </div>
       </form>
     </div>
@@ -1202,48 +1204,6 @@
     var get = function (t) { var p = parts.find(function (x) { return x.type === t; }); return p ? p.value : ''; };
     document.getElementById('heb-date').textContent =
       toHebNum(+get('day')) + ' ב' + get('month') + ' ' + toHebNum(+get('year'));
-  })();
-
-  // Send a question without leaving the page. Falls back to a normal
-  // form POST when JavaScript is off.
-  (function () {
-    var form = document.getElementById('ask-form');
-    if (!form || !window.fetch) return;
-    var status = document.getElementById('ask-status');
-    var button = form.querySelector('button[type="submit"]');
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (form.querySelector('.ask-honey').value) return;
-
-      status.className = 'ask-status';
-      status.textContent = 'Sending…';
-      button.disabled = true;
-
-      fetch('https://formsubmit.co/ajax/Dimitry@YaiDevelopment.com', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          email:     form.elements.email.value,
-          subject:   form.elements.subject.value,
-          question:  form.elements.question.value,
-          _subject:  'iShul question from ishul.org',
-          _template: 'table',
-          _captcha:  'false'
-        })
-      })
-        .then(function (res) { if (!res.ok) throw new Error(res.status); return res.json(); })
-        .then(function () {
-          form.reset();
-          status.textContent = 'Thank you — we\u2019ll write back shortly.';
-        })
-        .catch(function () {
-          status.className = 'ask-status err';
-          status.innerHTML = 'Something went wrong — please email ' +
-            '<a href="mailto:Dimitry@YaiDevelopment.com">Dimitry@YaiDevelopment.com</a>.';
-        })
-        .then(function () { button.disabled = false; });
-    });
   })();
 </script>
 

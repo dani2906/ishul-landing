@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thank you — iShul</title>
+<meta name="description" content="Your question is on its way to iShul. We'll write back shortly." />
+<meta name="robots" content="noindex" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Frank+Ruhl+Libre:wght@400;500;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --amber:       #c47b2b;
+    --amber-glow:  rgba(196,123,43,0.13);
+    --bark:        #4a2c0a;
+    --parchment:   #fdf6e9;
+    --white:       #ffffff;
+    --muted:       #9a856a;
+    --border:      rgba(196,123,43,0.20);
+    --sage:        #5a7a52;
+    --card-shadow: 0 2px 12px rgba(26,16,8,0.09);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans:  'Lato', -apple-system, 'Segoe UI', sans-serif;
+    --hebrew: 'Frank Ruhl Libre', 'Times New Roman', serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: var(--sans); background: var(--parchment); color: var(--bark);
+    line-height: 1.6; -webkit-font-smoothing: antialiased;
+    min-height: 100vh; display: flex; flex-direction: column;
+  }
+  .bsd {
+    display: flex; justify-content: flex-end;
+    padding: 12px 24px 0; font-family: var(--hebrew); font-size: 13px; color: var(--muted);
+  }
+  main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 48px 24px; }
+  .card {
+    position: relative; overflow: hidden; text-align: center;
+    max-width: 560px; width: 100%;
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 28px; padding: 56px 40px; box-shadow: var(--card-shadow);
+  }
+  .orb {
+    position: absolute; width: 360px; height: 360px; border-radius: 50%;
+    background: radial-gradient(circle, var(--amber-glow) 0%, transparent 70%);
+    top: -170px; left: 50%; transform: translateX(-50%); pointer-events: none;
+  }
+  .check {
+    position: relative; width: 62px; height: 62px; margin: 0 auto 22px;
+    border-radius: 50%; background: rgba(90,122,82,0.12);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .check svg {
+    width: 30px; height: 30px; stroke: var(--sage); fill: none;
+    stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+  }
+  h1 { position: relative; font-family: var(--serif); font-weight: 700; font-size: 42px; line-height: 1.1; margin-bottom: 14px; }
+  .lede { position: relative; font-size: 17px; color: var(--muted); margin-bottom: 32px; }
+  .actions { position: relative; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; text-decoration: none; cursor: pointer;
+    font-family: var(--sans); font-weight: 900; font-size: 15px;
+    padding: 13px 26px; border-radius: 16px; border: none;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary { background: var(--amber); color: var(--parchment); box-shadow: 0 4px 14px rgba(196,123,43,0.35); }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(196,123,43,0.45); }
+  .btn-outline { background: transparent; color: var(--bark); border: 1px solid var(--border); }
+  .btn-outline:hover { border-color: var(--amber); color: var(--amber); }
+  .quote {
+    position: relative; margin-top: 34px; padding-top: 26px; border-top: 1px solid var(--border);
+    font-family: var(--serif); font-style: italic; font-size: 21px; color: var(--amber);
+  }
+  footer { border-top: 1px solid var(--border); padding: 24px; text-align: center; }
+  footer p { font-size: 13px; color: var(--muted); }
+  footer a { color: var(--amber); text-decoration: none; font-weight: 700; }
+  @media (max-width: 560px) {
+    .card { padding: 42px 24px; }
+    h1 { font-size: 34px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bsd"><span aria-label="B'siyata Dishmaya">בס״ד</span></div>
+
+<main>
+  <div class="card">
+    <div class="orb"></div>
+    <div class="check">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h1>Your question is on its way</h1>
+    <p class="lede">Thank you for writing — we read every message, and you'll hear back from us shortly.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="/#book">Book a call instead</a>
+      <a class="btn btn-outline" href="/">Back to iShul</a>
+    </div>
+    <p class="quote">One shul. One community. One app.</p>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 iShul &middot; <a href="mailto:Dimitry@YaiDevelopment.com">Dimitry@YaiDevelopment.com</a></p>
+</footer>
+
+</body>
+</html>
