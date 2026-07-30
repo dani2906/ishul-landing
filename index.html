@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>iShul — Your shul's own app</title>
-<meta name="description" content="iShul unites your community around your synagogue — one custom-branded app where members help each other, learn Torah together, donate and sponsor events, and participate in shul life, all at the same time." />
+<title>iShul — Your congregation's own app, at a fraction of the price</title>
+<meta name="description" content="iShul gives each synagogue a standalone app of its own — your name on the App Store, your branding, your members only — for a fraction of what an app studio charges. Inside, a community that helps each other, learns Torah together, and takes part in shul life." />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-<meta property="og:title" content="iShul — Your shul's own app" />
-<meta property="og:description" content="iShul unites your community around your synagogue — one app where members help each other, learn Torah together, and participate in shul life." />
+<meta property="og:title" content="iShul — Your congregation's own app, at a fraction of the price" />
+<meta property="og:description" content="A standalone app built for your congregation alone — your name on the App Store, your branding, your members only — at a fraction of a studio's quote." />
 <meta property="og:url" content="https://ishul.org" />
 <meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -102,6 +102,14 @@
   h1 em { font-style: italic; font-weight: 500; color: var(--amber); }
   .hero p.lede { font-size: 18px; color: var(--muted); max-width: 480px; margin-bottom: 34px; }
   .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-second {
+    max-width: 480px; margin-top: 32px; padding-top: 22px;
+    border-top: 1px solid var(--border);
+    font-size: 15px; color: var(--muted);
+  }
+  .hero-second strong { color: var(--bark); font-weight: 900; }
+  .hero-second a { color: var(--amber); font-weight: 700; text-decoration: none; white-space: nowrap; }
+  .hero-second a:hover { text-decoration: underline; }
 
   /* ── Phone mockup ── */
   .phone-col { display: flex; justify-content: center; }
@@ -162,7 +170,40 @@
   .tab .ico { font-size: 15px; display: block; margin-bottom: 2px; }
 
   /* ── Community pillars ── */
-  .community { padding-top: 24px; }
+  /* ── Why it costs a fraction ── */
+  .value { background: var(--parchment-dk); }
+  .price-compare {
+    display: flex; align-items: center; justify-content: center;
+    gap: 20px; flex-wrap: wrap; margin-bottom: 46px;
+  }
+  .pc-item {
+    background: var(--white); border: 1px solid var(--border); border-radius: 18px;
+    padding: 22px 32px; text-align: center; box-shadow: var(--card-shadow); min-width: 250px;
+  }
+  .pc-k {
+    display: block; font-size: 11px; font-weight: 900; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 6px;
+  }
+  .pc-v { display: block; font-family: var(--serif); font-weight: 600; font-size: 27px; line-height: 1.15; }
+  .pc-old .pc-v { color: var(--muted); text-decoration: line-through; text-decoration-thickness: 1px; }
+  .pc-new { border-color: rgba(196,123,43,0.45); box-shadow: 0 6px 20px rgba(196,123,43,0.18); }
+  .pc-new .pc-v { color: var(--amber); }
+  .pc-arrow { font-size: 24px; font-weight: 900; color: var(--amber); }
+  .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .vcard {
+    background: var(--white); border: 1px solid var(--border); border-radius: 18px;
+    padding: 30px 26px; box-shadow: var(--card-shadow);
+  }
+  .vcard-eyebrow {
+    font-size: 11px; font-weight: 900; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--amber); margin-bottom: 10px;
+  }
+  .vcard h3 { font-family: var(--serif); font-weight: 600; font-size: 23px; line-height: 1.2; margin-bottom: 8px; }
+  .vcard p { font-size: 15px; color: var(--muted); }
+  .value-note { text-align: center; margin-top: 34px; font-size: 15px; color: var(--muted); }
+  .value-note a { color: var(--amber); font-weight: 700; text-decoration: none; }
+  .value-note a:hover { text-decoration: underline; }
+
   .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .pillar {
     background: var(--white); border: 1px solid var(--border); border-radius: 18px;
@@ -505,7 +546,9 @@
     .hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .hero { padding: 56px 0 48px; }
     h1 { font-size: 42px; }
-    .steps, .pillars, .duo, .offer-grid, .frow, .brand-tiles, .sec-cards { grid-template-columns: 1fr; }
+    .steps, .pillars, .duo, .offer-grid, .frow, .brand-tiles, .sec-cards, .value-grid { grid-template-columns: 1fr; }
+    .pc-item { width: 100%; }
+    .pc-arrow { transform: rotate(90deg); }
     .code-boxes span { width: 40px; height: 52px; font-size: 23px; }
     .frow { gap: 36px; padding: 40px 0; }
     .frow.flip .frow-mock { order: 0; }
@@ -533,6 +576,7 @@
       <span class="brand-name">iShul</span>
     </a>
     <div class="nav-links">
+      <a href="#price">Pricing</a>
       <a href="#community">Community</a>
       <a href="#features">Features</a>
       <a href="#giving">Giving</a>
@@ -547,13 +591,17 @@
   <div class="hero-orb"></div>
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow">Your Shul &middot; Your Community &middot; Your App</div>
-      <h1>One community, <em>united around your shul.</em></h1>
-      <p class="lede">iShul brings your whole community together in one warm place — where members help each other, learn Torah together, and take part in shul life, all at the same time. Your own branded app, on the App Store and Google Play.</p>
+      <div class="eyebrow">Standalone apps for synagogues</div>
+      <h1>Your shul's own app, <em>at a fraction of the price.</em></h1>
+      <p class="lede">Not a shared platform with your logo dropped on top. Your congregation gets a standalone app of its own — your name on the App Store, your colors, your members inside and nobody else's. The hard engineering is already built and maintained, so the price is a fraction of a studio's quote.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="mailto:Dimitry@YaiDevelopment.com">Get your shul's app</a>
         <a class="btn btn-outline" href="#features">See what's inside</a>
       </div>
+      <p class="hero-second">
+        <strong>And what it's all for:</strong> one community united around your shul — members helping each other, learning Torah together, and taking part in shul life, all in the same place.
+        <a href="#community">See how &rsaquo;</a>
+      </p>
     </div>
     <div class="phone-col">
       <div class="phone" role="img" aria-label="Preview of a synagogue app built with iShul">
@@ -593,9 +641,49 @@
   </div>
 </header>
 
+<section class="value" id="price">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The economics</div>
+      <h2>A custom app, without the custom price</h2>
+      <p>App studios quote tens of thousands and half a year of work to build a synagogue app from nothing. Yours already exists — it just needs your name on it.</p>
+    </div>
+    <div class="price-compare">
+      <div class="pc-item pc-old">
+        <span class="pc-k">A studio build</span>
+        <span class="pc-v">Tens of thousands</span>
+      </div>
+      <div class="pc-arrow" aria-hidden="true">&rarr;</div>
+      <div class="pc-item pc-new">
+        <span class="pc-k">Your iShul app</span>
+        <span class="pc-v">A fraction of it</span>
+      </div>
+    </div>
+    <div class="value-grid">
+      <div class="vcard">
+        <div class="vcard-eyebrow">Already built</div>
+        <h3>You're not paying to invent it</h3>
+        <p>Prayer times, RSVPs, the board, giving, the directory — written, tested, and already running in real shuls. What you're buying is your shul's app, not years of engineering.</p>
+      </div>
+      <div class="vcard">
+        <div class="vcard-eyebrow">Shared foundation</div>
+        <h3>Many shuls, one engine</h3>
+        <p>Every community runs on the same core, so the cost of building and improving it is split between them — and an upgrade one shul gets, every shul gets.</p>
+      </div>
+      <div class="vcard">
+        <div class="vcard-eyebrow">No hourly bills</div>
+        <h3>Changes don't cost a work order</h3>
+        <p>Times, events, announcements, and invites are yours to change from the dashboard whenever you like. No developer, no ticket, no invoice for moving Mincha.</p>
+      </div>
+    </div>
+    <p class="value-note">Founding communities save 90% or 50% on top of that — <a href="#offer">see founding pricing</a>.</p>
+  </div>
+</section>
+
 <section class="community" id="community">
   <div class="wrap">
     <div class="section-head">
+      <div class="eyebrow">The heart of it</div>
       <h2>A community united around your shul</h2>
       <p>More than schedules and announcements — one shared space where everyone shows up for each other.</p>
     </div>
@@ -1005,8 +1093,8 @@
   <div class="wrap">
     <div class="cta-card">
       <div class="orb"></div>
-      <h2>Ready to unite your community?</h2>
-      <p>Tell us about your shul and we'll take it from there.</p>
+      <h2>Ready for an app of your own?</h2>
+      <p>Tell us your shul's name, your colors, and what your community needs — we'll take it from there.</p>
       <a class="btn btn-primary" href="mailto:Dimitry@YaiDevelopment.com">Dimitry@YaiDevelopment.com</a>
     </div>
   </div>
