@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pricing — iShul</title>
+<meta name="description" content="Your shul's own app for $99 a month or $999 a year — iOS and Android, your branding, your dashboard, and every update included. Founding communities save 90% or 50%." />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<meta property="og:title" content="Pricing — iShul" />
+<meta property="og:description" content="$99 a month or $999 a year for your congregation's own app on iOS and Android — branding, dashboard, and updates included." />
+<meta property="og:url" content="https://ishul.org/pricing.html" />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Frank+Ruhl+Libre:wght@400;500;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --amber:        #c47b2b;
+    --amber-light:  #e8a84a;
+    --amber-glow:   rgba(196,123,43,0.13);
+    --bark:         #4a2c0a;
+    --bark-deep:    #3a1e06;
+    --parchment:    #fdf6e9;
+    --parchment-dk: #f0e8d4;
+    --white:        #ffffff;
+    --muted:        #9a856a;
+    --border:       rgba(196,123,43,0.20);
+    --sage:         #5a7a52;
+    --card-shadow:  0 2px 12px rgba(26,16,8,0.09);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans:  'Lato', -apple-system, 'Segoe UI', sans-serif;
+    --hebrew: 'Frank Ruhl Libre', 'Times New Roman', serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans); background: var(--parchment); color: var(--bark);
+    line-height: 1.6; -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── B"SD strip ── */
+  .bsd {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 12px 24px 0;
+    font-family: var(--hebrew); font-size: 13px; color: var(--muted);
+  }
+
+  /* ── Nav ── */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(253,246,233,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--bark); }
+  .brand-name { font-family: var(--serif); font-weight: 700; font-size: 26px; letter-spacing: 0.5px; }
+  .nav-links { display: flex; align-items: center; gap: 28px; }
+  .nav-links a { text-decoration: none; color: var(--bark); font-size: 14px; font-weight: 700; }
+  .nav-links a:hover { color: var(--amber); }
+  .nav-links a.here { color: var(--amber); }
+  .btn {
+    display: inline-block; text-decoration: none; cursor: pointer;
+    font-family: var(--sans); font-weight: 900; font-size: 15px;
+    padding: 13px 26px; border-radius: 16px; border: none;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary {
+    background: var(--amber); color: var(--parchment);
+    box-shadow: 0 4px 14px rgba(196,123,43,0.35);
+  }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(196,123,43,0.45); }
+  .btn-outline { background: transparent; color: var(--bark); border: 1px solid var(--border); box-shadow: none; }
+  .btn-outline:hover { border-color: var(--amber); color: var(--amber); }
+  .nav-links .btn { padding: 10px 20px; font-size: 14px; }
+
+  /* ── Page head ── */
+  .phead { padding: 72px 0 40px; position: relative; overflow: hidden; text-align: center; }
+  .phead-orb {
+    position: absolute; width: 620px; height: 620px; border-radius: 50%;
+    background: radial-gradient(circle, var(--amber-glow) 0%, transparent 70%);
+    top: -260px; left: 50%; transform: translateX(-50%); pointer-events: none;
+  }
+  .eyebrow {
+    font-size: 12px; font-weight: 900; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 18px;
+  }
+  h1 {
+    position: relative; font-family: var(--serif); font-weight: 700;
+    font-size: 54px; line-height: 1.08; margin-bottom: 18px;
+  }
+  h1 em { font-style: italic; font-weight: 500; color: var(--amber); }
+  .phead p { position: relative; font-size: 18px; color: var(--muted); max-width: 620px; margin: 0 auto; }
+
+  section { padding: 72px 0; }
+  section[id] { scroll-margin-top: 78px; }
+  .section-head { text-align: center; max-width: 620px; margin: 0 auto 46px; }
+  h2 { font-family: var(--serif); font-weight: 700; font-size: 38px; line-height: 1.15; margin-bottom: 14px; }
+  .section-head p { color: var(--muted); font-size: 16px; }
+
+  /* ── Plans ── */
+  .plans { padding-top: 24px; }
+  .plan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; max-width: 800px; margin: 0 auto; }
+  .plan {
+    background: var(--white); border: 1px solid var(--border); border-radius: 22px;
+    padding: 36px 32px; box-shadow: var(--card-shadow); position: relative;
+    display: flex; flex-direction: column;
+  }
+  .plan.hot { border: 2px solid var(--amber); box-shadow: 0 8px 28px rgba(196,123,43,0.20); }
+  .plan-tag {
+    display: inline-block; align-self: flex-start;
+    font-size: 11px; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 6px 14px; border-radius: 999px; margin-bottom: 20px;
+    background: var(--parchment-dk); color: var(--muted);
+  }
+  .plan.hot .plan-tag { background: var(--amber); color: var(--parchment); }
+  .plan-price { font-family: var(--serif); font-weight: 700; font-size: 62px; line-height: 1; color: var(--bark); }
+  .plan.hot .plan-price { color: var(--amber); }
+  .plan-price small { font-family: var(--sans); font-size: 16px; font-weight: 700; color: var(--muted); letter-spacing: 0; }
+  .plan-meta { margin-top: 12px; font-size: 15px; font-weight: 700; }
+  .plan-meta.add { color: var(--bark); }
+  .plan-meta.free { color: var(--sage); }
+  .plan-sub { margin-top: 6px; font-size: 14px; color: var(--muted); }
+  .plan-rule { height: 1px; background: var(--border); margin: 24px 0 20px; }
+  .plan-list { list-style: none; display: grid; gap: 10px; margin-bottom: 26px; }
+  .plan-list li { position: relative; padding-left: 26px; font-size: 15px; color: var(--muted); }
+  .plan-list li::before {
+    content: ''; position: absolute; left: 0; top: 7px; width: 14px; height: 8px;
+    border-left: 2px solid var(--sage); border-bottom: 2px solid var(--sage);
+    transform: rotate(-45deg);
+  }
+  .plan .btn { margin-top: auto; text-align: center; }
+  .plan-fine { margin-top: 14px; font-size: 13px; color: var(--muted); text-align: center; }
+
+  /* ── What's included ── */
+  .incl { background: var(--parchment-dk); }
+  .incl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .icard {
+    background: var(--white); border: 1px solid var(--border); border-radius: 18px;
+    padding: 26px 24px; box-shadow: var(--card-shadow);
+  }
+  .icard h3 { font-family: var(--serif); font-weight: 700; font-size: 22px; margin-bottom: 8px; }
+  .icard p { font-size: 14.5px; color: var(--muted); }
+
+  /* ── Setup fee ── */
+  .setup-card {
+    max-width: 800px; margin: 0 auto;
+    background: var(--white); border: 1px solid var(--border); border-radius: 22px;
+    padding: 40px 36px; box-shadow: var(--card-shadow);
+  }
+  .setup-card h2 { font-size: 32px; }
+  .setup-card > p { color: var(--muted); margin-bottom: 24px; }
+  .setup-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 14px 26px; }
+  .setup-list li { position: relative; padding-left: 26px; font-size: 15px; color: var(--muted); }
+  .setup-list li strong { color: var(--bark); font-weight: 900; display: block; }
+  .setup-list li::before {
+    content: ''; position: absolute; left: 0; top: 8px; width: 9px; height: 9px;
+    border-radius: 50%; background: var(--amber);
+  }
+  .setup-note {
+    margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--border);
+    font-size: 15px; color: var(--muted);
+  }
+  .setup-note strong { color: var(--sage); font-weight: 900; }
+
+  /* ── Founding band ── */
+  .found { background: var(--bark-deep); position: relative; overflow: hidden; }
+  .found-orb {
+    position: absolute; width: 620px; height: 620px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,168,74,0.14) 0%, transparent 70%);
+    top: -240px; left: 50%; transform: translateX(-50%); pointer-events: none;
+  }
+  .found .section-head { position: relative; }
+  .found .eyebrow { color: var(--amber-light); }
+  .found h2 { color: var(--parchment); }
+  .found .section-head p { color: rgba(253,246,233,0.74); }
+  .found-grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 760px; margin: 0 auto; }
+  .fcard {
+    background: rgba(253,246,233,0.06); border: 1px solid rgba(232,168,74,0.28);
+    border-radius: 20px; padding: 32px 28px; text-align: center;
+  }
+  .fcard.hot { border-color: var(--amber-light); background: rgba(232,168,74,0.10); }
+  .fcard-tag {
+    display: inline-block; font-size: 11px; font-weight: 900; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--amber-light); margin-bottom: 14px;
+  }
+  .fcard-pct { font-family: var(--serif); font-weight: 700; font-size: 56px; line-height: 1; color: var(--parchment); }
+  .fcard-pct small { font-size: 22px; font-weight: 600; }
+  .fcard-rows { margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(232,168,74,0.24); display: grid; gap: 8px; }
+  .fcard-row { display: flex; justify-content: space-between; font-size: 14.5px; color: rgba(253,246,233,0.74); }
+  .fcard-row b { color: var(--parchment); font-weight: 900; }
+  .fcard-row s { color: rgba(253,246,233,0.4); }
+  .found-note { position: relative; text-align: center; margin-top: 30px; font-size: 15px; color: rgba(253,246,233,0.7); }
+  .found-note a { color: var(--amber-light); font-weight: 700; text-decoration: none; }
+  .found-note a:hover { text-decoration: underline; }
+
+  /* ── FAQ ── */
+  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 32px; max-width: 900px; margin: 0 auto; }
+  .faq h3 { font-family: var(--serif); font-weight: 700; font-size: 22px; margin-bottom: 6px; }
+  .faq p { font-size: 15px; color: var(--muted); }
+
+  /* ── Closing CTA ── */
+  .cta-band { padding: 72px 0 84px; }
+  .cta-card {
+    background: var(--bark-deep); border-radius: 28px; padding: 60px 40px;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .cta-card .orb {
+    position: absolute; width: 460px; height: 460px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,168,74,0.16) 0%, transparent 70%);
+    top: -220px; left: 50%; transform: translateX(-50%); pointer-events: none;
+  }
+  .cta-card h2 { position: relative; color: var(--parchment); }
+  .cta-card p { position: relative; color: rgba(253,246,233,0.74); max-width: 520px; margin: 0 auto 28px; }
+  .cta-card .btn { position: relative; }
+  .cta-fine { position: relative; margin-top: 18px; font-size: 13px; color: rgba(253,246,233,0.6) !important; }
+  .cta-fine a { color: var(--amber-light); font-weight: 700; text-decoration: none; }
+
+  footer { border-top: 1px solid var(--border); padding: 32px 0; }
+  .foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .foot .brand-name { font-size: 20px; }
+  .foot p { font-size: 13px; color: var(--muted); }
+  .foot a { color: var(--amber); text-decoration: none; font-weight: 700; }
+
+  @media (max-width: 860px) {
+    h1 { font-size: 40px; }
+    .phead { padding: 48px 0 32px; }
+    section { padding: 56px 0; }
+    .plan-grid, .incl-grid, .found-grid, .faq-grid, .setup-list { grid-template-columns: 1fr; }
+    .setup-card { padding: 32px 24px; }
+    .cta-card { padding: 44px 22px; }
+    .nav-links a:not(.btn) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap bsd">
+  <span id="heb-date" dir="rtl"></span>
+  <span aria-label="B'siyata Dishmaya">בס״ד</span>
+</div>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="brand" href="/">
+      <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="29" height="29" rx="9" fill="#c47b2b"/>
+        <path d="M9 23 V14 L16 8.5 L23 14 V23" stroke="#fdf6e9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="16" cy="17.5" r="2.4" fill="#e8a84a"/>
+      </svg>
+      <span class="brand-name">iShul</span>
+    </a>
+    <div class="nav-links">
+      <a class="here" href="pricing.html">Pricing</a>
+      <a href="/#community">Community</a>
+      <a href="/#features">Features</a>
+      <a href="/#giving">Giving</a>
+      <a href="/#privacy">Privacy</a>
+      <a href="/#how">How it works</a>
+      <a class="btn btn-primary" href="/#book">Book a call</a>
+    </div>
+  </div>
+</nav>
+
+<header class="phead">
+  <div class="phead-orb"></div>
+  <div class="wrap">
+    <div class="eyebrow">Pricing</div>
+    <h1>One price, <em>your whole community.</em></h1>
+    <p>Every plan is the complete app — iOS and Android, under your shul's own name, with your branding, your dashboard, and every future update included. No per-member fees, and nothing for your congregants to pay.</p>
+  </div>
+</header>
+
+<section class="plans" id="plans">
+  <div class="wrap">
+    <div class="plan-grid">
+
+      <div class="plan">
+        <span class="plan-tag">Monthly</span>
+        <div class="plan-price">$99<small> / month</small></div>
+        <p class="plan-meta add">+ $199 one-time setup</p>
+        <p class="plan-sub">Month to month — start small and see how your community takes to it.</p>
+        <div class="plan-rule"></div>
+        <ul class="plan-list">
+          <li>The complete app, nothing held back</li>
+          <li>Billed monthly, no long commitment</li>
+          <li>Setup covers branding and store launch</li>
+          <li>Switch to yearly whenever you like</li>
+        </ul>
+        <a class="btn btn-outline" href="/#book">Book a call</a>
+        <p class="plan-fine">$1,387 over your first year</p>
+      </div>
+
+      <div class="plan hot">
+        <span class="plan-tag">Yearly &middot; best value</span>
+        <div class="plan-price">$999<small> / year</small></div>
+        <p class="plan-meta free">Setup fee waived</p>
+        <p class="plan-sub">Works out to about $83 a month — and saves you $388 in the first year.</p>
+        <div class="plan-rule"></div>
+        <ul class="plan-list">
+          <li>The complete app, nothing held back</li>
+          <li>No $199 setup fee</li>
+          <li>Close to two months free versus monthly</li>
+          <li>One invoice a year for your treasurer</li>
+        </ul>
+        <a class="btn btn-primary" href="/#book">Book a call</a>
+        <p class="plan-fine">$999 over your first year</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="incl" id="included">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What every plan includes</h2>
+      <p>There is no smaller tier with pieces missing. Whichever plan you pick, your community gets all of it.</p>
+    </div>
+    <div class="incl-grid">
+      <div class="icard">
+        <h3>Your own app</h3>
+        <p>A standalone app on the Apple App Store and Google Play under your shul's name — your logo, your colors, your fonts. Members never see ours.</p>
+      </div>
+      <div class="icard">
+        <h3>Everything inside</h3>
+        <p>Prayer times and zmanim, Shabbat and yom tov, events with RSVPs, the community board, Torah learning, and giving — all of it, from day one.</p>
+      </div>
+      <div class="icard">
+        <h3>Your dashboard</h3>
+        <p>Update times, events, announcements, and classes yourself, and watch donations and sponsorships arrive. No developer, no work order.</p>
+      </div>
+      <div class="icard">
+        <h3>Members only</h3>
+        <p>Invite codes you issue and revoke, so the app stays your community and only your community — never public, never searchable.</p>
+      </div>
+      <div class="icard">
+        <h3>Updates included</h3>
+        <p>Every improvement built for any shul reaches yours — new features, iOS and Android releases, and store submissions all handled for you.</p>
+      </div>
+      <div class="icard">
+        <h3>Unlimited members</h3>
+        <p>Eighty families or eight hundred, the price is the same. Your congregants download the app and use it free.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="setup">
+  <div class="wrap">
+    <div class="setup-card">
+      <h2>What the setup fee covers</h2>
+      <p>A one-time $199 on the monthly plan — the work of turning the platform into <em>your</em> shul's app. It is waived entirely on the yearly plan.</p>
+      <ul class="setup-list">
+        <li><strong>Branding your app</strong>Your logo, colors, and fonts applied throughout, so it feels like your shul from the first screen.</li>
+        <li><strong>Store listings</strong>App Store and Google Play pages in your shul's name, with screenshots and description written for you.</li>
+        <li><strong>Review and release</strong>We submit to Apple and Google, answer their reviewers, and get your app published.</li>
+        <li><strong>Your first content</strong>Prayer schedule, upcoming events, and your dashboard set up with real information before launch.</li>
+        <li><strong>A walkthrough</strong>Time with your gabbai, rabbi, or office to show them how to run the dashboard themselves.</li>
+        <li><strong>Invite codes</strong>Your first batch of member codes, ready to hand out the day the app goes live.</li>
+      </ul>
+      <p class="setup-note"><strong>On the yearly plan, all of this is included</strong> — no setup fee at all.</p>
+    </div>
+  </div>
+</section>
+
+<section class="found" id="founding">
+  <div class="found-orb"></div>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Limited to ten communities</div>
+      <h2>Founding shul pricing</h2>
+      <p>We're launching iShul with a small circle of founding communities, and the earliest shuls get an extraordinary deal on the prices above.</p>
+    </div>
+    <div class="found-grid">
+      <div class="fcard hot">
+        <div class="fcard-tag">First 3 shuls</div>
+        <div class="fcard-pct">90<small>% off</small></div>
+        <div class="fcard-rows">
+          <div class="fcard-row"><span>Yearly</span><span><s>$999</s> &nbsp;<b>$99</b></span></div>
+          <div class="fcard-row"><span>Monthly</span><span><s>$99</s> &nbsp;<b>$9.90</b></span></div>
+        </div>
+      </div>
+      <div class="fcard">
+        <div class="fcard-tag">Shuls 4&ndash;10</div>
+        <div class="fcard-pct">50<small>% off</small></div>
+        <div class="fcard-rows">
+          <div class="fcard-row"><span>Yearly</span><span><s>$999</s> &nbsp;<b>$499</b></span></div>
+          <div class="fcard-row"><span>Monthly</span><span><s>$99</s> &nbsp;<b>$49.50</b></span></div>
+        </div>
+      </div>
+    </div>
+    <p class="found-note">No commitment needed to hold your place — just <a href="/#book">grab a time to talk</a>.</p>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Questions we hear often</h2>
+    </div>
+    <div class="faq-grid">
+      <div>
+        <h3>Is there a long contract?</h3>
+        <p>No. Monthly is month to month, and yearly is a single twelve-month term. Your content and member list are yours either way.</p>
+      </div>
+      <div>
+        <h3>Do our members pay anything?</h3>
+        <p>Never. The app is free for your congregants to download and use, however many of them there are.</p>
+      </div>
+      <div>
+        <h3>Can we start monthly and move to yearly?</h3>
+        <p>Yes. Tell us when you're ready and we'll move you over at your next renewal, setup fee already behind you.</p>
+      </div>
+      <div>
+        <h3>Are updates extra?</h3>
+        <p>No. New features, iOS and Android releases, and store submissions are all part of the price, for as long as you're with us.</p>
+      </div>
+      <div>
+        <h3>What about a website?</h3>
+        <p>We design shul websites to match your app, quoted separately depending on what you need. Ask about it on the call.</p>
+      </div>
+      <div>
+        <h3>How long until we're live?</h3>
+        <p>Most of the work is your branding and content, plus Apple and Google's review. We'll give you a realistic date on our first call.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="wrap">
+    <div class="cta-card">
+      <div class="orb"></div>
+      <h2>Let's talk about your shul</h2>
+      <p>Half an hour, no obligation — we'll walk you through the app, answer what pricing doesn't, and see whether a founding spot is still open.</p>
+      <a class="btn btn-primary" href="/#book">Book a 30-minute call</a>
+      <p class="cta-fine">Rather write first? <a href="/#ask">Send us a question</a>.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <span class="brand-name">iShul</span>
+    <p>&copy; 2026 iShul &middot; <a href="mailto:Dimitry@YaiDevelopment.com">Dimitry@YaiDevelopment.com</a></p>
+  </div>
+</footer>
+
+<script>
+  // Today's Hebrew date with traditional letter numerals, e.g. ט״ו באב תשפ״ו
+  (function () {
+    function toHebNum(n) {
+      var ones = ['','א','ב','ג','ד','ה','ו','ז','ח','ט'];
+      var tens = ['','י','כ','ל','מ','נ','ס','ע','פ','צ'];
+      var hundreds = ['','ק','ר','ש','ת','תק','תר','תש','תת','תתק'];
+      var s = '';
+      n = n % 1000;
+      s += hundreds[Math.floor(n / 100)];
+      var r = n % 100;
+      if (r === 15) s += 'טו';
+      else if (r === 16) s += 'טז';
+      else { s += tens[Math.floor(r / 10)]; s += ones[r % 10]; }
+      return s.length > 1 ? s.slice(0, -1) + '\u05F4' + s.slice(-1) : s + '\u05F3';
+    }
+    var parts = new Intl.DateTimeFormat('he-u-ca-hebrew', { day: 'numeric', month: 'long', year: 'numeric' })
+      .formatToParts(new Date());
+    var get = function (t) { var p = parts.find(function (x) { return x.type === t; }); return p ? p.value : ''; };
+    document.getElementById('heb-date').textContent =
+      toHebNum(+get('day')) + ' ב' + get('month') + ' ' + toHebNum(+get('year'));
+  })();
+</script>
+
+</body>
+</html>
