@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Pricing — iShul</title>
-<meta name="description" content="Your shul's own app for $99 a month or $999 a year — iOS and Android, your branding, your dashboard, and every update included. Founding communities save 90% or 50%." />
+<meta name="description" content="Your shul's own app for $99 a month or $999 a year — iOS and Android, your branding, your dashboard, and every update included. No per-member fees." />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 <meta property="og:title" content="Pricing — iShul" />
 <meta property="og:description" content="$99 a month or $999 a year for your congregation's own app on iOS and Android — branding, dashboard, and updates included." />
@@ -164,44 +164,15 @@
   }
   .setup-note strong { color: var(--sage); font-weight: 900; }
 
-  /* ── Founding band ── */
-  .found { background: var(--bark-deep); position: relative; overflow: hidden; }
-  .found-orb {
-    position: absolute; width: 620px; height: 620px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(232,168,74,0.14) 0%, transparent 70%);
-    top: -240px; left: 50%; transform: translateX(-50%); pointer-events: none;
+  /* ── Launch note ── */
+  .launch {
+    max-width: 800px; margin: 26px auto 0; text-align: center;
+    background: rgba(196,123,43,0.07); border: 1px solid var(--border);
+    border-radius: 16px; padding: 16px 24px; font-size: 15px; color: var(--muted);
   }
-  .found .section-head { position: relative; }
-  .found .eyebrow { color: var(--amber-light); }
-  .found h2 { color: var(--parchment); }
-  .found .section-head p { color: rgba(253,246,233,0.74); }
-  .found-grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 760px; margin: 0 auto; }
-  .fcard {
-    background: rgba(253,246,233,0.06); border: 1px solid rgba(232,168,74,0.28);
-    border-radius: 20px; padding: 32px 28px; text-align: center;
-  }
-  .fcard.hot { border-color: var(--amber-light); background: rgba(232,168,74,0.10); }
-  .fcard-tag {
-    display: inline-block; font-size: 11px; font-weight: 900; letter-spacing: 1.5px;
-    text-transform: uppercase; color: var(--amber-light); margin-bottom: 14px;
-  }
-  .fcard-pct { font-family: var(--serif); font-weight: 700; font-size: 56px; line-height: 1; color: var(--parchment); }
-  .fcard-pct small { font-size: 22px; font-weight: 600; }
-  .fcard-sub {
-    margin-top: 6px; font-size: 12px; font-weight: 900; letter-spacing: 1.5px;
-    text-transform: uppercase; color: rgba(253,246,233,0.6);
-  }
-  .fcard-rows { margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(232,168,74,0.24); display: grid; gap: 8px; }
-  .fcard-row { display: flex; justify-content: space-between; font-size: 14.5px; color: rgba(253,246,233,0.74); }
-  .fcard-row b { color: var(--parchment); font-weight: 900; }
-  .fcard-row s { color: rgba(253,246,233,0.4); }
-  .found-fine {
-    position: relative; text-align: center; max-width: 640px; margin: 26px auto 0;
-    font-size: 13.5px; color: rgba(253,246,233,0.55);
-  }
-  .found-note { position: relative; text-align: center; margin-top: 14px; font-size: 15px; color: rgba(253,246,233,0.7); }
-  .found-note a { color: var(--amber-light); font-weight: 700; text-decoration: none; }
-  .found-note a:hover { text-decoration: underline; }
+  .launch strong { color: var(--bark); font-weight: 900; }
+  .launch a { color: var(--amber); font-weight: 700; text-decoration: none; }
+  .launch a:hover { text-decoration: underline; }
 
   /* ── FAQ ── */
   .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 32px; max-width: 900px; margin: 0 auto; }
@@ -235,7 +206,7 @@
     h1 { font-size: 40px; }
     .phead { padding: 48px 0 32px; }
     section { padding: 56px 0; }
-    .plan-grid, .incl-grid, .found-grid, .faq-grid, .setup-list { grid-template-columns: 1fr; }
+    .plan-grid, .incl-grid, .faq-grid, .setup-list { grid-template-columns: 1fr; }
     .setup-card { padding: 32px 24px; }
     .cta-card { padding: 44px 22px; }
     .nav-links a:not(.btn) { display: none; }
@@ -317,6 +288,11 @@
       </div>
 
     </div>
+
+    <p class="launch">
+      <strong>We're just launching.</strong> The first ten shuls to come on board get up to 90% off their first year —
+      <a href="mailto:Dimitry@YaiDevelopment.com?subject=iShul%20launch%20discount">email us</a> if that could be your community.
+    </p>
   </div>
 </section>
 
@@ -373,39 +349,6 @@
   </div>
 </section>
 
-<section class="found" id="founding">
-  <div class="found-orb"></div>
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Limited to ten communities</div>
-      <h2>Founding shul pricing</h2>
-      <p>We're launching iShul with a small circle of founding communities, and the earliest shuls get their first year at a fraction of the prices above.</p>
-    </div>
-    <div class="found-grid">
-      <div class="fcard hot">
-        <div class="fcard-tag">First 3 shuls</div>
-        <div class="fcard-pct">90<small>% off</small></div>
-        <div class="fcard-sub">your first year</div>
-        <div class="fcard-rows">
-          <div class="fcard-row"><span>Yearly</span><span><s>$999</s> &nbsp;<b>$99</b></span></div>
-          <div class="fcard-row"><span>Monthly</span><span><s>$99</s> &nbsp;<b>$9.90</b></span></div>
-        </div>
-      </div>
-      <div class="fcard">
-        <div class="fcard-tag">Shuls 4&ndash;10</div>
-        <div class="fcard-pct">50<small>% off</small></div>
-        <div class="fcard-sub">your first year</div>
-        <div class="fcard-rows">
-          <div class="fcard-row"><span>Yearly</span><span><s>$999</s> &nbsp;<b>$499</b></span></div>
-          <div class="fcard-row"><span>Monthly</span><span><s>$99</s> &nbsp;<b>$49.50</b></span></div>
-        </div>
-      </div>
-    </div>
-    <p class="found-fine">Founding pricing covers your first year; after that it's the regular $99 a month or $999 a year. The one-time $199 setup fee still applies on the monthly plan.</p>
-    <p class="found-note">No commitment needed to hold your place — just <a href="/#book">grab a time to talk</a>.</p>
-  </div>
-</section>
-
 <section class="faq" id="faq">
   <div class="wrap">
     <div class="section-head">
@@ -433,8 +376,8 @@
         <p>We design shul websites to match your app, quoted separately depending on what you need. Ask about it on the call.</p>
       </div>
       <div>
-        <h3>What happens after the founding year?</h3>
-        <p>You move to the regular $99 a month or $999 a year. We'll tell you well before it happens — no quiet renewals at a new price.</p>
+        <h3>Is there a launch discount?</h3>
+        <p>Yes — the first ten shuls to join get up to 90% off their first year, then move to the regular price. Email us and we'll tell you whether a place is still open.</p>
       </div>
       <div>
         <h3>How long until we're live?</h3>
@@ -449,7 +392,7 @@
     <div class="cta-card">
       <div class="orb"></div>
       <h2>Let's talk about your shul</h2>
-      <p>Half an hour, no obligation — we'll walk you through the app, answer what pricing doesn't, and see whether a founding spot is still open.</p>
+      <p>Half an hour, no obligation — we'll walk you through the app, answer whatever this page doesn't, and talk about what your community needs.</p>
       <a class="btn btn-primary" href="/#book">Book a 30-minute call</a>
       <p class="cta-fine">Rather write first? <a href="/#ask">Send us a question</a>.</p>
     </div>
