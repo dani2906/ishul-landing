@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>iShul — Your congregation's own app, at a fraction of the price</title>
-<meta name="description" content="iShul gives each synagogue a standalone app of its own — your name on the App Store, your branding, your members only — for a fraction of what an app studio charges. Inside, a community that helps each other, learns Torah together, and takes part in shul life." />
+<title>iShul — Your shul's own app, so more people show up</title>
+<meta name="description" content="iShul is a standalone app for your synagogue — fill the minyan, fill the seats, fund what you run. Your name on the App Store, your branding, your members only." />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-<meta property="og:title" content="iShul — Your congregation's own app, at a fraction of the price" />
-<meta property="og:description" content="A standalone app built for your congregation alone — your name on the App Store, your branding, your members only — at a fraction of a studio's quote." />
+<meta property="og:title" content="iShul — Your shul's own app, so more people show up" />
+<meta property="og:description" content="A standalone app for your congregation — more prayer participation, faster minyanim, easier events, and giving that happens in the moment." />
 <meta property="og:url" content="https://ishul.org" />
 <meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -102,15 +102,6 @@
   h1 em { font-style: italic; font-weight: 500; color: var(--amber); }
   .hero p.lede { font-size: 18px; color: var(--muted); max-width: 480px; margin-bottom: 34px; }
   .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
-  .hero-second {
-    max-width: 480px; margin-top: 32px; padding-top: 22px;
-    border-top: 1px solid var(--border);
-    font-size: 15px; color: var(--muted);
-  }
-  .hero-second strong { color: var(--bark); font-weight: 900; }
-  .hero-second a { color: var(--amber); font-weight: 700; text-decoration: none; white-space: nowrap; }
-  .hero-second a:hover { text-decoration: underline; }
-
   /* ── Phone mockup ── */
   .phone-col { display: flex; justify-content: center; }
   .phone {
@@ -169,40 +160,28 @@
   .tab.active { color: var(--amber); }
   .tab .ico { font-size: 15px; display: block; margin-bottom: 2px; }
 
-  /* ── Community pillars ── */
-  /* ── Why it costs a fraction ── */
-  .value { background: var(--parchment-dk); }
-  .price-compare {
-    display: flex; align-items: center; justify-content: center;
-    gap: 20px; flex-wrap: wrap; margin-bottom: 46px;
-  }
-  .pc-item {
+  /* ── Outcomes / why an app helps ── */
+  .outcomes { background: var(--parchment-dk); }
+  .outcomes .section-head { max-width: 620px; }
+  .outcome-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto; }
+  .ocard {
     background: var(--white); border: 1px solid var(--border); border-radius: 18px;
-    padding: 22px 32px; text-align: center; box-shadow: var(--card-shadow); min-width: 250px;
+    padding: 30px 28px; box-shadow: var(--card-shadow);
   }
-  .pc-k {
-    display: block; font-size: 11px; font-weight: 900; letter-spacing: 2px;
-    text-transform: uppercase; color: var(--muted); margin-bottom: 6px;
-  }
-  .pc-v { display: block; font-family: var(--serif); font-weight: 600; font-size: 27px; line-height: 1.15; }
-  .pc-old .pc-v { color: var(--muted); text-decoration: line-through; text-decoration-thickness: 1px; }
-  .pc-new { border-color: rgba(196,123,43,0.45); box-shadow: 0 6px 20px rgba(196,123,43,0.18); }
-  .pc-new .pc-v { color: var(--amber); }
-  .pc-arrow { font-size: 24px; font-weight: 900; color: var(--amber); }
-  .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .vcard {
-    background: var(--white); border: 1px solid var(--border); border-radius: 18px;
-    padding: 30px 26px; box-shadow: var(--card-shadow);
-  }
-  .vcard-eyebrow {
+  .ocard-eyebrow {
     font-size: 11px; font-weight: 900; letter-spacing: 2px;
     text-transform: uppercase; color: var(--amber); margin-bottom: 10px;
   }
-  .vcard h3 { font-family: var(--serif); font-weight: 600; font-size: 23px; line-height: 1.2; margin-bottom: 8px; }
-  .vcard p { font-size: 15px; color: var(--muted); }
-  .value-note { text-align: center; margin-top: 34px; font-size: 15px; color: var(--muted); }
-  .value-note a { color: var(--amber); font-weight: 700; text-decoration: none; }
-  .value-note a:hover { text-decoration: underline; }
+  .ocard h3 { font-family: var(--serif); font-weight: 600; font-size: 24px; line-height: 1.2; margin-bottom: 8px; }
+  .ocard p { font-size: 15px; color: var(--muted); }
+
+  /* Quiet price strip before booking */
+  .price-quiet {
+    text-align: center; padding: 0 24px 8px;
+    font-size: 15px; color: var(--muted);
+  }
+  .price-quiet a { color: var(--amber); font-weight: 700; text-decoration: none; }
+  .price-quiet a:hover { text-decoration: underline; }
 
   .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .pillar {
@@ -244,7 +223,7 @@
   h2 { font-family: var(--serif); font-weight: 700; font-size: 40px; line-height: 1.15; margin-bottom: 14px; }
   .section-head p { color: var(--muted); font-size: 16px; }
 
-  .features { background: var(--parchment-dk); }
+  .community { background: var(--parchment-dk); }
 
   #how { background: var(--parchment-dk); }
   .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -538,9 +517,7 @@
     .hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .hero { padding: 56px 0 48px; }
     h1 { font-size: 42px; }
-    .steps, .pillars, .duo, .frow, .sec-cards, .value-grid { grid-template-columns: 1fr; }
-    .pc-item { width: 100%; }
-    .pc-arrow { transform: rotate(90deg); }
+    .steps, .pillars, .duo, .frow, .sec-cards, .outcome-grid { grid-template-columns: 1fr; }
     .code-boxes span { width: 40px; height: 52px; font-size: 23px; }
     .frow { gap: 36px; padding: 40px 0; }
     .frow.flip .frow-mock { order: 0; }
@@ -552,6 +529,7 @@
     .ask-row { grid-template-columns: 1fr; gap: 0; }
     .nav-links { gap: 18px; }
     .nav-links a:not(.btn) { display: none; }
+    .nav-links a[href="#outcomes"],
     .nav-links a[href="pricing.html"] { display: inline-block; }
     section { padding: 64px 0; }
   }
@@ -575,12 +553,11 @@
       <span class="brand-name">iShul</span>
     </a>
     <div class="nav-links">
-      <a href="pricing.html">Pricing</a>
-      <a href="#community">Community</a>
+      <a href="#outcomes">Why an app</a>
       <a href="#features">Features</a>
-      <a href="#giving">Giving</a>
+      <a href="#community">Community</a>
       <a href="#privacy">Privacy</a>
-      <a href="#how">How it works</a>
+      <a href="pricing.html">Pricing</a>
       <a class="btn btn-primary" href="#book">Book a call</a>
     </div>
   </div>
@@ -590,17 +567,13 @@
   <div class="hero-orb"></div>
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow">Standalone apps for synagogues</div>
-      <h1>Your shul's own app, <em>at a fraction of the price.</em></h1>
-      <p class="lede">Not a shared platform with your logo dropped on top. Your congregation gets a standalone app of its own — your name on the App Store, your colors, your members inside and nobody else's. The hard engineering is already built and maintained, so the price is a fraction of a studio's quote.</p>
+      <div class="eyebrow">The app for your congregation</div>
+      <h1>Your shul's own app — <em>so more people show up.</em></h1>
+      <p class="lede">A standalone app under your name on the App Store — your branding, your members only — built to fill the minyan, fill the seats, and fund what you run.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="#book">Book a call</a>
-        <a class="btn btn-outline" href="#features">See what's inside</a>
+        <a class="btn btn-outline" href="#outcomes">See what it changes</a>
       </div>
-      <p class="hero-second">
-        <strong>And what it's all for:</strong> one community united around your shul — members helping each other, learning Torah together, and taking part in shul life, all in the same place.
-        <a href="#community">See how &rsaquo;</a>
-      </p>
     </div>
     <div class="phone-col">
       <div class="phone" role="img" aria-label="Preview of a synagogue app built with iShul">
@@ -640,85 +613,78 @@
   </div>
 </header>
 
-<section class="value" id="price">
+<section class="outcomes" id="outcomes">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">The economics</div>
-      <h2>A custom app, without the custom price</h2>
-      <p>App studios quote tens of thousands and half a year of work to build a synagogue app from nothing. Yours already exists — it just needs your name on it.</p>
+      <div class="eyebrow">Why your own app</div>
+      <h2>What changes when the whole shul is in one place</h2>
+      <p>Not another calendar nobody opens — the tools that get people into the sanctuary, into the room, and into the work of supporting the shul.</p>
     </div>
-    <div class="price-compare">
-      <div class="pc-item pc-old">
-        <span class="pc-k">A studio build</span>
-        <span class="pc-v">Tens of thousands</span>
+    <div class="outcome-grid">
+      <div class="ocard">
+        <div class="ocard-eyebrow">Prayer participation</div>
+        <h3>More people know when to come</h3>
+        <p>The next tefillah sits on the home screen. Daily times and zmanim travel with every member — so showing up is the default, not a text chain.</p>
       </div>
-      <div class="pc-arrow" aria-hidden="true">&rarr;</div>
-      <div class="pc-item pc-new">
-        <span class="pc-k">Your iShul app</span>
-        <span class="pc-v">A fraction of it</span>
+      <div class="ocard">
+        <div class="ocard-eyebrow">Minyan, faster</div>
+        <h3>Fill a short minyan before it's too late</h3>
+        <p>When a service still needs people, the app says so. Members see the gap and can step in — instead of the gabbai calling down a list at the last minute.</p>
       </div>
-    </div>
-    <div class="value-grid">
-      <div class="vcard">
-        <div class="vcard-eyebrow">Already built</div>
-        <h3>You're not paying to invent it</h3>
-        <p>Prayer times, RSVPs, the board, giving, the directory — written, tested, and already running in real shuls. What you're buying is your shul's app, not years of engineering.</p>
+      <div class="ocard">
+        <div class="ocard-eyebrow">Events without chaos</div>
+        <h3>Publish once. Know who's coming.</h3>
+        <p>Dinners, classes, and holiday programs live in one place. Members RSVP with a guest count; you see the room fill before you buy the food.</p>
       </div>
-      <div class="vcard">
-        <div class="vcard-eyebrow">Shared foundation</div>
-        <h3>Many shuls, one engine</h3>
-        <p>Every community runs on the same core, so the cost of building and improving it is split between them — and an upgrade one shul gets, every shul gets.</p>
-      </div>
-      <div class="vcard">
-        <div class="vcard-eyebrow">No hourly bills</div>
-        <h3>Changes don't cost a work order</h3>
-        <p>Times, events, announcements, and invites are yours to change from the dashboard whenever you like. No developer, no ticket, no invoice for moving Mincha.</p>
+      <div class="ocard">
+        <div class="ocard-eyebrow">Sponsors &amp; donations</div>
+        <h3>Ask in the moment that matters</h3>
+        <p>Sponsor a kiddush or give a gift from inside the app — when someone is already looking at the event — not weeks later in an email they never opened.</p>
       </div>
     </div>
-    <p class="value-note">$99 a month or $999 a year, whatever the size of your community — <a href="pricing.html">see the full pricing</a>.</p>
-  </div>
-</section>
-
-<section class="community" id="community">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">The heart of it</div>
-      <h2>A community united around your shul</h2>
-      <p>More than schedules and announcements — one shared space where everyone shows up for each other.</p>
-    </div>
-    <p class="hebrew-quote">״כל ישראל ערבים זה בזה״<span class="translit">All of Israel is responsible for one another</span></p>
-    <div class="pillars">
-      <div class="pillar pillar-sage">
-        <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 8.6a5 5 0 0 0-8.1-1.6L12 7.7l-.7-.7a5 5 0 0 0-8.1 1.6c-.9 2.2-.2 4.5 1.5 6.1L12 21l7.3-6.3c1.7-1.6 2.4-3.9 1.5-6.1z"/></svg></div>
-        <h3>Help each other</h3>
-        <p>A meal for new parents, a ride to shul, a hand before Shabbat — members see each other's needs and simchas, and answer them.</p>
-      </div>
-      <div class="pillar pillar-amber">
-        <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg></div>
-        <h3>Learn Torah together</h3>
-        <p>Shiurim, weekly parsha, and learning programs the whole community joins — because Torah grows when it's learned together.</p>
-      </div>
-      <div class="pillar pillar-blue">
-        <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3>Participate together</h3>
-        <p>RSVP to the dinner, make the minyan, join the program — everyone taking part in shul life, all at the same time.</p>
-      </div>
-    </div>
-    <p class="unity-line">One shul. One community. One app.</p>
   </div>
 </section>
 
 <section class="features" id="features">
   <div class="wrap">
     <div class="section-head">
-      <h2>Everything your shul needs</h2>
-      <p>A warm, modern app your whole community will actually use — every screen designed around synagogue life.</p>
+      <h2>Built around how a shul actually runs</h2>
+      <p>Every screen is there to move a real metric — seats filled, a minyan made, an event managed, a gift received.</p>
     </div>
+
     <div class="frow">
       <div class="frow-text">
+        <div class="frow-eyebrow">Prayer &amp; minyan</div>
+        <h3>So no one misses a minyan</h3>
+        <p>The next tefillah is always front and center, with the full daily davening schedule and zmanim — and a clear signal when a minyan still needs people.</p>
+        <ul class="fr-list">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Next prayer, always visible</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>"Needs minyan" alerts</li>
+        </ul>
+      </div>
+      <div class="frow-mock">
+        <div class="screen-mock" role="img" aria-label="App screen showing daily prayer times">
+          <div class="sm-bar"><span>9:41</span><span>&#9679;&#9679;&#9679;</span></div>
+          <div class="hero-card" style="margin: 4px 14px 12px;">
+            <div class="orb"></div>
+            <div class="label">Next Prayer</div>
+            <div class="title">Mincha</div>
+            <div class="meta">Today &middot; 6:45 PM &middot; Main Sanctuary</div>
+          </div>
+          <div class="sm-body">
+            <div class="ptime"><span>Shacharit</span><span class="when">7:00 AM</span></div>
+            <div class="ptime"><span>Mincha</span><span class="when">6:45 PM</span></div>
+            <div class="ptime"><span>Maariv</span><span><span class="need">Needs 2</span>&nbsp;&nbsp;<span class="when">8:15 PM</span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="frow flip">
+      <div class="frow-text">
         <div class="frow-eyebrow">Events &amp; RSVPs</div>
-        <h3>Every simcha and program, one tap away</h3>
-        <p>Shabbat dinners, holiday programs, and classes — members browse what's coming up, RSVP for their family, and share it with a friend.</p>
+        <h3>Every dinner and program, filled</h3>
+        <p>Shabbat dinners, holiday programs, and classes — members browse what's coming up, RSVP for their family, and you know the headcount in time to plan.</p>
         <ul class="fr-list">
           <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>RSVP with a guest count</li>
           <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>See who else is attending</li>
@@ -743,34 +709,6 @@
               <div class="mini-date"><div class="d">22</div><div class="m">Aug</div></div>
               <div class="mini-body"><div class="t">Shabbat Evening Service</div><div class="s">6:45 PM &middot; Sanctuary</div></div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="frow flip">
-      <div class="frow-text">
-        <div class="frow-eyebrow">Prayer Times &amp; Minyanim</div>
-        <h3>So no one misses a minyan</h3>
-        <p>The next tefillah is always front and center, with the full daily davening schedule and zmanim — and a nudge when a minyan still needs people.</p>
-        <ul class="fr-list">
-          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Next prayer, always visible</li>
-          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>"Needs minyan" alerts</li>
-        </ul>
-      </div>
-      <div class="frow-mock">
-        <div class="screen-mock" role="img" aria-label="App screen showing daily prayer times">
-          <div class="sm-bar"><span>9:41</span><span>&#9679;&#9679;&#9679;</span></div>
-          <div class="hero-card" style="margin: 4px 14px 12px;">
-            <div class="orb"></div>
-            <div class="label">Next Prayer</div>
-            <div class="title">Mincha</div>
-            <div class="meta">Today &middot; 6:45 PM &middot; Main Sanctuary</div>
-          </div>
-          <div class="sm-body">
-            <div class="ptime"><span>Shacharit</span><span class="when">7:00 AM</span></div>
-            <div class="ptime"><span>Mincha</span><span class="when">6:45 PM</span></div>
-            <div class="ptime"><span>Maariv</span><span><span class="need">Needs 2</span>&nbsp;&nbsp;<span class="when">8:15 PM</span></span></div>
           </div>
         </div>
       </div>
@@ -877,9 +815,9 @@
 
     <div class="frow flip" id="giving">
       <div class="frow-text">
-        <div class="frow-eyebrow">Donations &amp; Sponsorships</div>
-        <h3>Giving, made effortless</h3>
-        <p>Members donate and sponsor events directly in the app — a kiddush, a shiur, a holiday program — with no envelopes, forms, or friction.</p>
+        <div class="frow-eyebrow">Sponsors &amp; donations</div>
+        <h3>Giving when the moment is right</h3>
+        <p>Members sponsor a kiddush or send a gift while they're already in the app looking at the event — no envelopes, no follow-up forms, no friction.</p>
         <ul class="fr-list">
           <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>One-time or recurring gifts</li>
           <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Dedications in honor or memory</li>
@@ -921,6 +859,35 @@
       </div>
     </div>
 
+  </div>
+</section>
+
+<section class="community" id="community">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The heart of it</div>
+      <h2>A community united around your shul</h2>
+      <p>More than schedules and announcements — one shared space where everyone shows up for each other.</p>
+    </div>
+    <p class="hebrew-quote">״כל ישראל ערבים זה בזה״<span class="translit">All of Israel is responsible for one another</span></p>
+    <div class="pillars">
+      <div class="pillar pillar-sage">
+        <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 8.6a5 5 0 0 0-8.1-1.6L12 7.7l-.7-.7a5 5 0 0 0-8.1 1.6c-.9 2.2-.2 4.5 1.5 6.1L12 21l7.3-6.3c1.7-1.6 2.4-3.9 1.5-6.1z"/></svg></div>
+        <h3>Help each other</h3>
+        <p>A meal for new parents, a ride to shul, a hand before Shabbat — members see each other's needs and simchas, and answer them.</p>
+      </div>
+      <div class="pillar pillar-amber">
+        <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg></div>
+        <h3>Learn Torah together</h3>
+        <p>Shiurim, weekly parsha, and learning programs the whole community joins — because Torah grows when it's learned together.</p>
+      </div>
+      <div class="pillar pillar-blue">
+        <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Participate together</h3>
+        <p>RSVP to the dinner, make the minyan, join the program — everyone taking part in shul life, all at the same time.</p>
+      </div>
+    </div>
+    <p class="unity-line">One shul. One community. One app.</p>
   </div>
 </section>
 
@@ -1041,6 +1008,8 @@
     </div>
   </div>
 </section>
+
+<p class="price-quiet">$99 a month or $999 a year — <a href="pricing.html">see pricing</a>.</p>
 
 <div class="cta-band" id="book">
   <div class="wrap">
