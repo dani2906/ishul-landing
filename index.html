@@ -501,28 +501,6 @@
     max-width: 640px; font-size: 15px; color: rgba(253,246,233,0.58);
   }
 
-  /* ── Founding offer ── */
-  .offer { background: var(--parchment-dk); }
-  .offer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 760px; margin: 0 auto; }
-  .offer-card {
-    background: var(--white); border: 1px solid var(--border); border-radius: 18px;
-    padding: 34px 28px; text-align: center; box-shadow: var(--card-shadow); position: relative;
-  }
-  .offer-card.hot { border: 2px solid var(--amber); box-shadow: 0 6px 24px rgba(196,123,43,0.22); }
-  .offer-tag {
-    display: inline-block; font-size: 11px; font-weight: 900; letter-spacing: 1.5px;
-    text-transform: uppercase; padding: 6px 14px; border-radius: 999px; margin-bottom: 16px;
-  }
-  .offer-card.hot .offer-tag { background: var(--amber); color: var(--parchment); }
-  .offer-card:not(.hot) .offer-tag { background: var(--parchment-dk); color: var(--muted); }
-  .offer-pct { font-family: var(--serif); font-weight: 700; font-size: 64px; line-height: 1; color: var(--amber); }
-  .offer-pct small { font-size: 26px; font-weight: 600; }
-  .offer-card:not(.hot) .offer-pct { color: var(--bark); }
-  .offer-card p { font-size: 14px; color: var(--muted); margin-top: 12px; }
-  .offer-note { text-align: center; margin-top: 32px; font-size: 15px; color: var(--muted); }
-  .offer-note a { color: var(--amber); font-weight: 700; text-decoration: none; }
-  .offer-fine { text-align: center; margin-top: 10px; font-size: 13px; color: var(--muted); opacity: 0.75; }
-
   /* ── CTA band ── */
   .cta-band { padding: 84px 0; }
   .cta-card {
@@ -581,7 +559,7 @@
     .hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .hero { padding: 56px 0 48px; }
     h1 { font-size: 42px; }
-    .steps, .pillars, .duo, .offer-grid, .frow, .brand-tiles, .sec-cards, .value-grid { grid-template-columns: 1fr; }
+    .steps, .pillars, .duo, .frow, .brand-tiles, .sec-cards, .value-grid { grid-template-columns: 1fr; }
     .pc-item { width: 100%; }
     .pc-arrow { transform: rotate(90deg); }
     .code-boxes span { width: 40px; height: 52px; font-size: 23px; }
@@ -593,7 +571,9 @@
     .calendly-inline-widget { min-width: 0 !important; width: 100%; height: 940px !important; }
     .ask { padding: 32px 22px; }
     .ask-row { grid-template-columns: 1fr; gap: 0; }
+    .nav-links { gap: 18px; }
     .nav-links a:not(.btn) { display: none; }
+    .nav-links a[href="pricing.html"] { display: inline-block; }
     section { padding: 64px 0; }
   }
 </style>
@@ -1104,29 +1084,6 @@
         <p>Update events, schedules, and announcements anytime from your dashboard — your community always sees the latest.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="offer" id="offer">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Founding shul pricing</h2>
-      <p>We're launching iShul with a small circle of founding communities — and the earliest shuls get an extraordinary deal.</p>
-    </div>
-    <div class="offer-grid">
-      <div class="offer-card hot">
-        <span class="offer-tag">First 3 shuls</span>
-        <div class="offer-pct">90<small>% off</small></div>
-        <p>Be one of the first three communities to join, and get your first year at a tenth of the price.</p>
-      </div>
-      <div class="offer-card">
-        <span class="offer-tag">First 10 shuls</span>
-        <div class="offer-pct">50<small>% off</small></div>
-        <p>Shuls four through ten get their first year half off as founding members of the iShul family.</p>
-      </div>
-    </div>
-    <p class="offer-note">That's off our regular $99 a month or $999 a year — <a href="pricing.html">see the plans</a>. No commitment needed to reserve your spot; just <a href="#book">grab a time to talk</a>.</p>
-    <p class="offer-fine">Founding pricing covers your first year; after that, the regular price.</p>
   </div>
 </section>
 
