@@ -527,10 +527,21 @@
     .calendly-inline-widget { min-width: 0 !important; width: 100%; height: 940px !important; }
     .ask { padding: 32px 22px; }
     .ask-row { grid-template-columns: 1fr; gap: 0; }
-    .nav-links { gap: 18px; }
+    .wrap { padding: 0 16px; }
+    .nav-inner { height: 56px; gap: 12px; }
+    .brand { flex: none; gap: 8px; }
+    .brand-name { font-size: 22px; }
+    .brand svg { width: 26px; height: 26px; }
+    .nav-links {
+      gap: 12px; flex: none; flex-shrink: 0;
+      white-space: nowrap;
+    }
     .nav-links a:not(.btn) { display: none; }
-    .nav-links a[href="#outcomes"],
-    .nav-links a[href="pricing.html"] { display: inline-block; }
+    /* Pricing only — "Why an app" wraps and crowds the bar on a phone */
+    .nav-links a[href="pricing.html"] { display: inline-block; font-size: 13px; }
+    .nav-links .btn { padding: 8px 14px; font-size: 13px; border-radius: 12px; }
+    .hero-ctas { flex-direction: column; align-items: stretch; }
+    .hero-ctas .btn { text-align: center; }
     section { padding: 64px 0; }
   }
 </style>
