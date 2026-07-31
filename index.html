@@ -246,6 +246,7 @@
 
   .features { background: var(--parchment-dk); }
 
+  #how { background: var(--parchment-dk); }
   .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .step { text-align: center; padding: 0 12px; }
   .step-num {
@@ -433,28 +434,6 @@
   }
   .sheet-secure { text-align: center; font-size: 9px; color: var(--muted); margin-top: 9px; }
 
-  /* White-label section */
-  .brandsec { background: var(--parchment-dk); }
-  .brand-tiles {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
-    max-width: 840px; margin: 0 auto;
-  }
-  .brandlet {
-    display: flex; align-items: center; gap: 14px; border-radius: 18px;
-    padding: 22px 20px; border: 1px solid var(--border); box-shadow: var(--card-shadow);
-  }
-  .brandlet .mark {
-    flex: none; width: 46px; height: 46px; border-radius: 13px;
-    display: flex; align-items: center; justify-content: center;
-    font-family: var(--serif); font-weight: 700; font-size: 21px;
-  }
-  .brandlet .nm { display: block; font-family: var(--serif); font-weight: 700; font-size: 18px; }
-  .brandlet .sb { display: block; font-size: 9.5px; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 2px; }
-  .brand-note {
-    text-align: center; margin-top: 34px; font-size: 15px; color: var(--muted);
-    max-width: 620px; margin-left: auto; margin-right: auto;
-  }
-
   /* ── Members-only / privacy ── */
   .security { background: var(--bark-deep); position: relative; overflow: hidden; }
   .security .sec-orb {
@@ -559,7 +538,7 @@
     .hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .hero { padding: 56px 0 48px; }
     h1 { font-size: 42px; }
-    .steps, .pillars, .duo, .frow, .brand-tiles, .sec-cards, .value-grid { grid-template-columns: 1fr; }
+    .steps, .pillars, .duo, .frow, .sec-cards, .value-grid { grid-template-columns: 1fr; }
     .pc-item { width: 100%; }
     .pc-arrow { transform: rotate(90deg); }
     .code-boxes span { width: 40px; height: 52px; font-size: 23px; }
@@ -1034,30 +1013,6 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="brandsec" id="brand">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>It's your shul's app, not ours</h2>
-      <p>Your logo, your colors, your fonts, your name on the App Store — a standalone app that feels like it was built for your community alone, because it was.</p>
-    </div>
-    <div class="brand-tiles">
-      <div class="brandlet" style="background:#fdf6e9; border-color:rgba(196,123,43,0.25);">
-        <span class="mark" style="background:#c47b2b; color:#fdf6e9;">K</span>
-        <span><span class="nm" style="color:#4a2c0a;">Kehillat Shalom</span><span class="sb" style="color:#9a856a;">Warm &middot; Parchment</span></span>
-      </div>
-      <div class="brandlet" style="background:#fafaf9; border-color:rgba(30,58,95,0.22);">
-        <span class="mark" style="background:#c9a227; color:#172d4a;">B</span>
-        <span><span class="nm" style="color:#1e3a5f;">Beth Israel</span><span class="sb" style="color:#6b7280;">Navy &middot; Gold</span></span>
-      </div>
-      <div class="brandlet" style="background:#f6f8f5; border-color:rgba(90,122,82,0.28);">
-        <span class="mark" style="background:#5a7a52; color:#f6f8f5;">H</span>
-        <span><span class="nm" style="color:#2f4029;">Har Tzion</span><span class="sb" style="color:#7d8b78;">Sage &middot; Stone</span></span>
-      </div>
-    </div>
-    <p class="brand-note">One codebase, many communities — every shul gets its own app on the Apple App Store and Google Play, under its own name. Members never see ours.</p>
   </div>
 </section>
 
