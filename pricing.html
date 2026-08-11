@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Pricing — iShul</title>
-<meta name="description" content="Your shul's own app for $99 a month or $999 a year — iOS and Android, your branding, your dashboard, and every update included. No per-member fees." />
+<meta name="description" content="Your shul's own app for $99 a month or $999 a year — or bundle the app with a matching website for $150 a month or $1,500 a year. No per-member fees." />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 <meta property="og:title" content="Pricing — iShul" />
 <meta property="og:description" content="$99 a month or $999 a year for your congregation's own app on iOS and Android — branding, dashboard, and updates included." />
@@ -101,7 +101,15 @@
 
   /* ── Plans ── */
   .plans { padding-top: 24px; }
-  .plan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; max-width: 800px; margin: 0 auto; }
+  .plan-group { max-width: 800px; margin: 0 auto 40px; }
+  .plan-group:last-of-type { margin-bottom: 0; }
+  .plan-group-head { text-align: center; margin-bottom: 22px; }
+  .plan-group-head h2 {
+    font-family: var(--serif); font-weight: 700; font-size: 28px;
+    line-height: 1.2; margin-bottom: 8px;
+  }
+  .plan-group-head p { font-size: 15px; color: var(--muted); max-width: 520px; margin: 0 auto; }
+  .plan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
   .plan {
     background: var(--white); border: 1px solid var(--border); border-radius: 22px;
     padding: 36px 32px; box-shadow: var(--card-shadow); position: relative;
@@ -115,9 +123,9 @@
     background: var(--parchment-dk); color: var(--muted);
   }
   .plan.hot .plan-tag { background: var(--amber); color: var(--parchment); }
-  .plan-price { font-family: var(--serif); font-weight: 700; font-size: 62px; line-height: 1; color: var(--bark); }
+  .plan-price { font-family: var(--serif); font-weight: 700; font-size: 56px; line-height: 1; color: var(--bark); }
   .plan.hot .plan-price { color: var(--amber); }
-  .plan-price small { font-family: var(--sans); font-size: 16px; font-weight: 700; color: var(--muted); letter-spacing: 0; }
+  .plan-price small { font-family: var(--sans); font-size: 15px; font-weight: 700; color: var(--muted); letter-spacing: 0; }
   .plan-meta { margin-top: 12px; font-size: 15px; font-weight: 700; }
   .plan-meta.add { color: var(--bark); }
   .plan-meta.free { color: var(--sage); }
@@ -142,6 +150,12 @@
   }
   .icard h3 { font-family: var(--serif); font-weight: 700; font-size: 22px; margin-bottom: 8px; }
   .icard p { font-size: 14.5px; color: var(--muted); }
+  .incl-note {
+    text-align: center; margin-top: 28px; font-size: 15px; color: var(--muted);
+    max-width: 560px; margin-left: auto; margin-right: auto;
+  }
+  .incl-note strong { color: var(--bark); font-weight: 900; }
+  .incl-note a { color: var(--amber); font-weight: 700; text-decoration: none; }
 
   /* ── Setup fee ── */
   .setup-card {
@@ -166,7 +180,7 @@
 
   /* ── Launch note ── */
   .launch {
-    max-width: 800px; margin: 26px auto 0; text-align: center;
+    max-width: 800px; margin: 40px auto 0; text-align: center;
     background: rgba(196,123,43,0.07); border: 1px solid var(--border);
     border-radius: 16px; padding: 16px 24px; font-size: 15px; color: var(--muted);
   }
@@ -207,6 +221,8 @@
     .phead { padding: 48px 0 32px; }
     section { padding: 56px 0; }
     .plan-grid, .incl-grid, .faq-grid, .setup-list { grid-template-columns: 1fr; }
+    .plan-group-head h2 { font-size: 24px; }
+    .plan-price { font-size: 48px; }
     .setup-card { padding: 32px 24px; }
     .cta-card { padding: 44px 22px; }
     .wrap { padding: 0 16px; }
@@ -253,46 +269,91 @@
   <div class="wrap">
     <div class="eyebrow">Pricing</div>
     <h1>One price, <em>your whole community.</em></h1>
-    <p>Every plan is the complete app — iOS and Android, under your shul's own name, with your branding, your dashboard, and every future update included. No per-member fees, and nothing for your congregants to pay.</p>
+    <p>The complete app on every plan — iOS and Android, under your shul's own name. Need a matching website too? Bundle them and keep one brand across web and mobile.</p>
   </div>
 </header>
 
 <section class="plans" id="plans">
   <div class="wrap">
-    <div class="plan-grid">
 
-      <div class="plan">
-        <span class="plan-tag">Monthly</span>
-        <div class="plan-price">$99<small> / month</small></div>
-        <p class="plan-meta add">+ $199 one-time setup</p>
-        <p class="plan-sub">Month to month — start small and see how your community takes to it.</p>
-        <div class="plan-rule"></div>
-        <ul class="plan-list">
-          <li>The complete app, nothing held back</li>
-          <li>Billed monthly, no long commitment</li>
-          <li>Setup covers branding and store launch</li>
-          <li>Switch to yearly whenever you like</li>
-        </ul>
-        <a class="btn btn-outline" href="/#book">Book a call</a>
-        <p class="plan-fine">$1,387 over your first year</p>
+    <div class="plan-group">
+      <div class="plan-group-head">
+        <h2>App only</h2>
+        <p>Your congregation's standalone app — branding, dashboard, and every update included. No per-member fees.</p>
       </div>
+      <div class="plan-grid">
+        <div class="plan">
+          <span class="plan-tag">Monthly</span>
+          <div class="plan-price">$99<small> / month</small></div>
+          <p class="plan-meta add">+ $199 one-time setup</p>
+          <p class="plan-sub">Month to month — start small and see how your community takes to it.</p>
+          <div class="plan-rule"></div>
+          <ul class="plan-list">
+            <li>The complete app, nothing held back</li>
+            <li>Billed monthly, no long commitment</li>
+            <li>Setup covers branding and store launch</li>
+            <li>Switch to yearly whenever you like</li>
+          </ul>
+          <a class="btn btn-outline" href="/#book">Book a call</a>
+          <p class="plan-fine">$1,387 over your first year</p>
+        </div>
 
-      <div class="plan hot">
-        <span class="plan-tag">Yearly &middot; best value</span>
-        <div class="plan-price">$999<small> / year</small></div>
-        <p class="plan-meta free">Setup fee waived</p>
-        <p class="plan-sub">Works out to about $83 a month — and saves you $388 in the first year.</p>
-        <div class="plan-rule"></div>
-        <ul class="plan-list">
-          <li>The complete app, nothing held back</li>
-          <li>No $199 setup fee</li>
-          <li>Close to two months free versus monthly</li>
-          <li>One invoice a year for your treasurer</li>
-        </ul>
-        <a class="btn btn-primary" href="/#book">Book a call</a>
-        <p class="plan-fine">$999 over your first year</p>
+        <div class="plan hot">
+          <span class="plan-tag">Yearly &middot; best value</span>
+          <div class="plan-price">$999<small> / year</small></div>
+          <p class="plan-meta free">Setup fee waived</p>
+          <p class="plan-sub">Works out to about $83 a month — and saves you $388 in the first year.</p>
+          <div class="plan-rule"></div>
+          <ul class="plan-list">
+            <li>The complete app, nothing held back</li>
+            <li>No $199 setup fee</li>
+            <li>Close to two months free versus monthly</li>
+            <li>One invoice a year for your treasurer</li>
+          </ul>
+          <a class="btn btn-primary" href="/#book">Book a call</a>
+          <p class="plan-fine">$999 over your first year</p>
+        </div>
       </div>
+    </div>
 
+    <div class="plan-group" id="bundle">
+      <div class="plan-group-head">
+        <h2>App + Website</h2>
+        <p>Everything in the app plan, plus a beautiful modern website that matches — one brand for your community on the web, iOS, and Android.</p>
+      </div>
+      <div class="plan-grid">
+        <div class="plan">
+          <span class="plan-tag">Monthly bundle</span>
+          <div class="plan-price">$150<small> / month</small></div>
+          <p class="plan-meta add">+ $300 one-time setup</p>
+          <p class="plan-sub">App and website, billed monthly — for shuls that want both from day one.</p>
+          <div class="plan-rule"></div>
+          <ul class="plan-list">
+            <li>The complete app, nothing held back</li>
+            <li>A matching modern website for your shul</li>
+            <li>Setup covers branding, stores, and site launch</li>
+            <li>Switch to yearly whenever you like</li>
+          </ul>
+          <a class="btn btn-outline" href="/#book">Book a call</a>
+          <p class="plan-fine">$2,100 over your first year</p>
+        </div>
+
+        <div class="plan hot">
+          <span class="plan-tag">Yearly bundle &middot; best value</span>
+          <div class="plan-price">$1,500<small> / year</small></div>
+          <p class="plan-meta free">Setup fee waived</p>
+          <p class="plan-sub">Works out to $125 a month — and saves you $600 in the first year versus monthly.</p>
+          <div class="plan-rule"></div>
+          <ul class="plan-list">
+            <li>The complete app, nothing held back</li>
+            <li>A matching modern website for your shul</li>
+            <li>No $300 setup fee</li>
+            <li>One invoice a year for your treasurer</li>
+          </ul>
+          <a class="btn btn-primary" href="/#book">Book a call</a>
+          <p class="plan-fine">$1,500 over your first year</p>
+        </div>
+      </div>
     </div>
 
     <p class="launch">
@@ -334,6 +395,10 @@
         <p>Eighty families or eight hundred, the price is the same. Your congregants download the app and use it free.</p>
       </div>
     </div>
+    <p class="incl-note">
+      The <strong>App + Website</strong> bundle adds a matching modern site on top of everything above —
+      same brand on the web as in the app. <a href="#bundle">See the bundle</a>.
+    </p>
   </div>
 </section>
 
@@ -341,7 +406,7 @@
   <div class="wrap">
     <div class="setup-card">
       <h2>What the setup fee covers</h2>
-      <p>A one-time $199 on the monthly plan — the work of turning the platform into <em>your</em> shul's app. It is waived entirely on the yearly plan.</p>
+      <p>A one-time fee on monthly plans only — $199 for the app, or $300 when you take the App + Website bundle. It is waived entirely on either yearly plan.</p>
       <ul class="setup-list">
         <li><strong>Branding your app</strong>Your logo, colors, and fonts applied throughout, so it feels like your shul from the first screen.</li>
         <li><strong>Store listings</strong>App Store and Google Play pages in your shul's name, with screenshots and description written for you.</li>
@@ -349,8 +414,9 @@
         <li><strong>Your first content</strong>Prayer schedule, upcoming events, and your dashboard set up with real information before launch.</li>
         <li><strong>A walkthrough</strong>Time with your gabbai, rabbi, or office to show them how to run the dashboard themselves.</li>
         <li><strong>Invite codes</strong>Your first batch of member codes, ready to hand out the day the app goes live.</li>
+        <li><strong>Your website</strong><em>Bundle only.</em> Design, build, and launch a modern site that matches your app — one brand across web and mobile.</li>
       </ul>
-      <p class="setup-note"><strong>On the yearly plan, all of this is included</strong> — no setup fee at all.</p>
+      <p class="setup-note"><strong>On either yearly plan, all of this is included</strong> — no setup fee at all.</p>
     </div>
   </div>
 </section>
@@ -379,7 +445,7 @@
       </div>
       <div>
         <h3>What about a website?</h3>
-        <p>We design shul websites to match your app, quoted separately depending on what you need. Ask about it on the call.</p>
+        <p>Bundle it with the app — $150 a month plus $300 setup, or $1,500 a year with setup waived. Same brand on the web as in the app. <a href="#bundle" style="color: var(--amber); font-weight: 700; text-decoration: none;">See the bundle</a>.</p>
       </div>
       <div>
         <h3>Is there a launch discount?</h3>
