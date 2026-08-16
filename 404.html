@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Thank you — iShul</title>
-<meta name="description" content="Your question is on its way to iShul. We'll write back shortly." />
-<meta name="robots" content="noindex, nofollow" />
+<title>Page not found — iShul</title>
+<meta name="description" content="That page is not on ishul.org. Head home or see pricing." />
+<meta name="robots" content="noindex" />
 <meta name="theme-color" content="#fdf6e9" />
-<link rel="canonical" href="https://ishul.org/thanks.html" />
+<link rel="canonical" href="https://ishul.org/" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,7 +22,6 @@
     --white:       #ffffff;
     --muted:       #9a856a;
     --border:      rgba(196,123,43,0.20);
-    --sage:        #5a7a52;
     --card-shadow: 0 2px 12px rgba(26,16,8,0.09);
     --serif: 'Cormorant Garamond', Georgia, serif;
     --sans:  'Lato', -apple-system, 'Segoe UI', sans-serif;
@@ -50,14 +49,9 @@
     background: radial-gradient(circle, var(--amber-glow) 0%, transparent 70%);
     top: -170px; left: 50%; transform: translateX(-50%); pointer-events: none;
   }
-  .check {
-    position: relative; width: 62px; height: 62px; margin: 0 auto 22px;
-    border-radius: 50%; background: rgba(90,122,82,0.12);
-    display: flex; align-items: center; justify-content: center;
-  }
-  .check svg {
-    width: 30px; height: 30px; stroke: var(--sage); fill: none;
-    stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+  .eyebrow {
+    position: relative; font-size: 12px; font-weight: 900; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 16px;
   }
   h1 { position: relative; font-family: var(--serif); font-weight: 700; font-size: 42px; line-height: 1.1; margin-bottom: 14px; }
   .lede { position: relative; font-size: 17px; color: var(--muted); margin-bottom: 32px; }
@@ -66,16 +60,9 @@
     display: inline-block; text-decoration: none; cursor: pointer;
     font-family: var(--sans); font-weight: 900; font-size: 15px;
     padding: 13px 26px; border-radius: 16px; border: none;
-    transition: transform .15s ease, box-shadow .15s ease;
   }
   .btn-primary { background: var(--amber); color: var(--parchment); box-shadow: 0 4px 14px rgba(196,123,43,0.35); }
-  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(196,123,43,0.45); }
   .btn-outline { background: transparent; color: var(--bark); border: 1px solid var(--border); }
-  .btn-outline:hover { border-color: var(--amber); color: var(--amber); }
-  .quote {
-    position: relative; margin-top: 34px; padding-top: 26px; border-top: 1px solid var(--border);
-    font-family: var(--serif); font-style: italic; font-size: 21px; color: var(--amber);
-  }
   footer { border-top: 1px solid var(--border); padding: 24px; text-align: center; }
   footer p { font-size: 13px; color: var(--muted); }
   footer a { color: var(--amber); text-decoration: none; font-weight: 700; }
@@ -86,28 +73,21 @@
 </style>
 </head>
 <body>
-
 <div class="bsd"><span aria-label="B'siyata Dishmaya">בס״ד</span></div>
-
 <main>
   <div class="card">
     <div class="orb"></div>
-    <div class="check">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-    </div>
-    <h1>Your question is on its way</h1>
-    <p class="lede">Thank you for writing — we read every message, and you'll hear back from us shortly.</p>
+    <div class="eyebrow">404</div>
+    <h1>This page isn’t here</h1>
+    <p class="lede">The link may be old, or the page may have moved. The home page and pricing are still right where you left them.</p>
     <div class="actions">
-      <a class="btn btn-primary" href="/#book">Book a call instead</a>
-      <a class="btn btn-outline" href="/">Back to iShul</a>
+      <a class="btn btn-primary" href="/">Back to iShul</a>
+      <a class="btn btn-outline" href="/pricing.html">See pricing</a>
     </div>
-    <p class="quote">One shul. One community. One app.</p>
   </div>
 </main>
-
 <footer>
-  <p>&copy; 2026 iShul &middot; <a href="/">Home</a> &middot; <a href="/pricing.html">Pricing</a> &middot; <a href="mailto:Dimitry@YaiDevelopment.com">Dimitry@YaiDevelopment.com</a></p>
+  <p>&copy; 2026 iShul &middot; <a href="/">Home</a> &middot; <a href="/pricing.html">Pricing</a></p>
 </footer>
-
 </body>
 </html>

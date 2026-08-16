@@ -5,11 +5,75 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>iShul — Your shul's own app, so more people show up</title>
 <meta name="description" content="iShul is a standalone app for your synagogue — fill the minyan, fill the seats, fund what you run. Your name on the App Store, your branding, your members only." />
-<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<meta name="theme-color" content="#fdf6e9" />
+<link rel="canonical" href="https://ishul.org/" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta property="og:site_name" content="iShul" />
+<meta property="og:locale" content="en_US" />
 <meta property="og:title" content="iShul — Your shul's own app, so more people show up" />
 <meta property="og:description" content="A standalone app for your congregation — more prayer participation, faster minyanim, easier events, and giving that happens in the moment." />
-<meta property="og:url" content="https://ishul.org" />
+<meta property="og:url" content="https://ishul.org/" />
 <meta property="og:type" content="website" />
+<meta property="og:image" content="https://ishul.org/og-image.jpg" />
+<meta property="og:image:alt" content="iShul — Your shul's own app, so more people show up" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="iShul — Your shul's own app, so more people show up" />
+<meta name="twitter:description" content="A standalone app for your congregation — more prayer participation, faster minyanim, easier events, and giving that happens in the moment." />
+<meta name="twitter:image" content="https://ishul.org/og-image.jpg" />
+<meta name="twitter:image:alt" content="iShul — Your shul's own app, so more people show up" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://ishul.org/#org",
+      "name": "iShul",
+      "url": "https://ishul.org/",
+      "logo": "https://ishul.org/apple-touch-icon.png",
+      "email": "Dimitry@YaiDevelopment.com",
+      "description": "A standalone synagogue app — your name on the App Store, your branding, your members only."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ishul.org/#website",
+      "url": "https://ishul.org/",
+      "name": "iShul",
+      "publisher": { "@id": "https://ishul.org/#org" },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://ishul.org/#app",
+      "name": "iShul",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "iOS, Android",
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "99",
+        "highPrice": "1500",
+        "priceCurrency": "USD",
+        "url": "https://ishul.org/pricing.html"
+      },
+      "url": "https://ishul.org/",
+      "publisher": { "@id": "https://ishul.org/#org" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://ishul.org/#webpage",
+      "url": "https://ishul.org/",
+      "name": "iShul — Your shul's own app, so more people show up",
+      "description": "iShul is a standalone app for your synagogue — fill the minyan, fill the seats, fund what you run.",
+      "isPartOf": { "@id": "https://ishul.org/#website" },
+      "about": { "@id": "https://ishul.org/#app" },
+      "primaryImageOfPage": "https://ishul.org/og-image.jpg"
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Frank+Ruhl+Libre:wght@400;500;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
@@ -43,6 +107,13 @@
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
+  .skip-link {
+    position: absolute; left: 16px; top: -48px; z-index: 100;
+    background: var(--amber); color: var(--parchment);
+    font-weight: 900; font-size: 14px; text-decoration: none;
+    padding: 10px 16px; border-radius: 10px;
+  }
+  .skip-link:focus { top: 16px; }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 
   /* ── B"SD strip ── */
@@ -547,15 +618,16 @@
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="wrap bsd">
   <span id="heb-date" dir="rtl"></span>
   <span aria-label="B'siyata Dishmaya">בס״ד</span>
 </div>
 
-<nav>
+<nav aria-label="Primary">
   <div class="wrap nav-inner">
-    <a class="brand" href="#">
+    <a class="brand" href="/">
       <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
         <rect x="1.5" y="1.5" width="29" height="29" rx="9" fill="#c47b2b"/>
         <path d="M9 23 V14 L16 8.5 L23 14 V23" stroke="#fdf6e9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
@@ -574,6 +646,7 @@
   </div>
 </nav>
 
+<main id="main">
 <header class="hero">
   <div class="hero-orb"></div>
   <div class="wrap hero-grid">
@@ -1069,11 +1142,12 @@
     </div>
   </div>
 </div>
+</main>
 
 <footer>
   <div class="wrap foot">
     <span class="brand-name">iShul</span>
-    <p>&copy; 2026 iShul &middot; <a href="mailto:Dimitry@YaiDevelopment.com">Dimitry@YaiDevelopment.com</a></p>
+    <p>&copy; 2026 iShul &middot; <a href="/">Home</a> &middot; <a href="/pricing.html">Pricing</a> &middot; <a href="mailto:Dimitry@YaiDevelopment.com">Dimitry@YaiDevelopment.com</a></p>
   </div>
 </footer>
 

@@ -5,11 +5,79 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Pricing — iShul</title>
 <meta name="description" content="App or website for $99 a month or $999 a year — or bundle both for $150 a month or $1,500 a year. No per-member fees." />
-<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<meta name="theme-color" content="#fdf6e9" />
+<link rel="canonical" href="https://ishul.org/pricing.html" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta property="og:site_name" content="iShul" />
+<meta property="og:locale" content="en_US" />
 <meta property="og:title" content="Pricing — iShul" />
 <meta property="og:description" content="$99 a month or $999 a year for your congregation's own app on iOS and Android — branding, dashboard, and updates included." />
 <meta property="og:url" content="https://ishul.org/pricing.html" />
 <meta property="og:type" content="website" />
+<meta property="og:image" content="https://ishul.org/og-image.jpg" />
+<meta property="og:image:alt" content="iShul — Your shul's own app, so more people show up" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Pricing — iShul" />
+<meta name="twitter:description" content="$99 a month or $999 a year for your congregation's own app on iOS and Android — branding, dashboard, and updates included." />
+<meta name="twitter:image" content="https://ishul.org/og-image.jpg" />
+<meta name="twitter:image:alt" content="iShul — Your shul's own app, so more people show up" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ishul.org/" },
+        { "@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://ishul.org/pricing.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is there a long contract?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Monthly is month to month, and yearly is a single twelve-month term. Your content and member list are yours either way." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do our members pay anything?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Never. The app is free for your congregants to download and use, however many of them there are." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can we start monthly and move to yearly?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Tell us when you're ready and we'll move you over at your next renewal, setup fee already behind you." }
+        },
+        {
+          "@type": "Question",
+          "name": "Are updates extra?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. New features, iOS and Android releases, and store submissions are all part of the price, for as long as you're with us." }
+        },
+        {
+          "@type": "Question",
+          "name": "What about a website?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Website alone is $99 a month or $999 a year — same as the app. Or take the App + Website bundle for $150 a month or $1,500 a year and save versus buying each separately." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a launch discount?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — the first ten shuls to join get up to 90% off their first year, then move to the regular price." }
+        },
+        {
+          "@type": "Question",
+          "name": "How long until we're live?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most of the work is your branding and content, plus Apple and Google's review. We'll give you a realistic date on our first call." }
+        }
+      ]
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Frank+Ruhl+Libre:wght@400;500;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
@@ -37,6 +105,13 @@
     font-family: var(--sans); background: var(--parchment); color: var(--bark);
     line-height: 1.6; -webkit-font-smoothing: antialiased;
   }
+  .skip-link {
+    position: absolute; left: 16px; top: -48px; z-index: 100;
+    background: var(--amber); color: var(--parchment);
+    font-weight: 900; font-size: 14px; text-decoration: none;
+    padding: 10px 16px; border-radius: 10px;
+  }
+  .skip-link:focus { top: 16px; }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 
   /* ── B"SD strip ── */
@@ -237,13 +312,14 @@
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="wrap bsd">
   <span id="heb-date" dir="rtl"></span>
   <span aria-label="B'siyata Dishmaya">בס״ד</span>
 </div>
 
-<nav>
+<nav aria-label="Primary">
   <div class="wrap nav-inner">
     <a class="brand" href="/">
       <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
@@ -264,6 +340,7 @@
   </div>
 </nav>
 
+<main id="main">
 <header class="phead">
   <div class="phead-orb"></div>
   <div class="wrap">
@@ -510,11 +587,12 @@
     </div>
   </div>
 </div>
+</main>
 
 <footer>
   <div class="wrap foot">
     <span class="brand-name">iShul</span>
-    <p>&copy; 2026 iShul &middot; <a href="mailto:Dimitry@YaiDevelopment.com">Dimitry@YaiDevelopment.com</a></p>
+    <p>&copy; 2026 iShul &middot; <a href="/">Home</a> &middot; <a href="/pricing.html">Pricing</a> &middot; <a href="mailto:Dimitry@YaiDevelopment.com">Dimitry@YaiDevelopment.com</a></p>
   </div>
 </footer>
 
