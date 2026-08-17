@@ -70,6 +70,41 @@
       "isPartOf": { "@id": "https://ishul.org/#website" },
       "about": { "@id": "https://ishul.org/#app" },
       "primaryImageOfPage": "https://ishul.org/og-image.jpg"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this our shul's own app, or a shared network?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Each congregation gets a standalone app under its own name on the App Store and Google Play. Members of one shul never see another shul's board, events, or directory." }
+        },
+        {
+          "@type": "Question",
+          "name": "What do we need to send you to get started?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Your logo, colors, and a first pass at prayer times and upcoming events. We handle branding, store listings, and setting up the dashboard." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can we keep the website we already have?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The app stands on its own. A matching site is optional — website-only or the app-and-website bundle — if you want one brand across web and mobile." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do we need someone technical on staff?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. The dashboard is meant for a gabbai, rabbi, or office manager. We walk them through it before launch." }
+        },
+        {
+          "@type": "Question",
+          "name": "What do members actually download?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Your shul's app, by your shul's name, from the Apple App Store or Google Play. They enter an invite code you issued. There is no shared iShul member app." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a small shul get a smaller app?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Every congregation gets the same app — prayer, events, board, learning, and giving. The difference is your branding and your content, not a lighter feature set." }
+        }
+      ]
     }
   ]
 }
@@ -295,6 +330,11 @@
   .section-head p { color: var(--muted); font-size: 16px; }
 
   .community { background: var(--parchment-dk); }
+
+  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 32px; max-width: 900px; margin: 0 auto; }
+  .faq h3 { font-family: var(--serif); font-weight: 700; font-size: 22px; margin-bottom: 6px; }
+  .faq p { font-size: 15px; color: var(--muted); }
+  .faq a { color: var(--amber); font-weight: 700; text-decoration: none; }
 
   #how { background: var(--parchment-dk); }
   .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -588,7 +628,7 @@
     .hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .hero { padding: 56px 0 48px; }
     h1 { font-size: 42px; }
-    .steps, .pillars, .duo, .frow, .sec-cards, .outcome-grid { grid-template-columns: 1fr; }
+    .steps, .pillars, .duo, .frow, .sec-cards, .outcome-grid, .faq-grid { grid-template-columns: 1fr; }
     .code-boxes span { width: 40px; height: 52px; font-size: 23px; }
     .frow { gap: 36px; padding: 40px 0; }
     .frow.flip .frow-mock { order: 0; }
@@ -1088,6 +1128,42 @@
         <div class="step-num">3</div>
         <h3>You stay in control</h3>
         <p>Update events, schedules, and announcements anytime from your dashboard — your community always sees the latest.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Common questions</div>
+      <h2>Before you book a call</h2>
+      <p>How the app is yours, what you need to start, and what members actually download.</p>
+    </div>
+    <div class="faq-grid">
+      <div>
+        <h3>Is this our shul's own app, or a shared network?</h3>
+        <p>Each congregation gets a standalone app under its own name on the App Store and Google Play. Members of one shul never see another shul's board, events, or directory.</p>
+      </div>
+      <div>
+        <h3>What do we need to send you to get started?</h3>
+        <p>Your logo, colors, and a first pass at prayer times and upcoming events. We handle branding, store listings, and setting up the dashboard.</p>
+      </div>
+      <div>
+        <h3>Can we keep the website we already have?</h3>
+        <p>Yes. The app stands on its own. A matching site is optional — <a href="pricing.html#website">website only</a> or the <a href="pricing.html#bundle">app-and-website bundle</a> — if you want one brand across web and mobile.</p>
+      </div>
+      <div>
+        <h3>Do we need someone technical on staff?</h3>
+        <p>No. The dashboard is meant for a gabbai, rabbi, or office manager. We walk them through it before launch.</p>
+      </div>
+      <div>
+        <h3>What do members actually download?</h3>
+        <p>Your shul's app, by your shul's name, from the Apple App Store or Google Play. They enter an invite code you issued. There is no shared iShul member app.</p>
+      </div>
+      <div>
+        <h3>Does a small shul get a smaller app?</h3>
+        <p>No. Every congregation gets the same app — prayer, events, board, learning, and giving. The difference is your branding and your content, not a lighter feature set.</p>
       </div>
     </div>
   </div>
