@@ -103,6 +103,11 @@
           "@type": "Question",
           "name": "Does a small shul get a smaller app?",
           "acceptedAnswer": { "@type": "Answer", "text": "No. Every congregation gets the same app — prayer, events, board, learning, and giving. The difference is your branding and your content, not a lighter feature set." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you give tzedakah?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. We set aside 10% of our profits — maaser from what we earn, not an extra charge on your shul." }
         }
       ]
     }
@@ -288,6 +293,11 @@
   }
   .price-quiet a { color: var(--amber); font-weight: 700; text-decoration: none; }
   .price-quiet a:hover { text-decoration: underline; }
+  .maaser-note {
+    text-align: center; margin-top: 36px;
+    font-family: var(--serif); font-style: italic; font-weight: 500;
+    font-size: 18px; color: var(--amber); max-width: 520px; margin-left: auto; margin-right: auto;
+  }
 
   .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .pillar {
@@ -1130,6 +1140,7 @@
         <p>Update events, schedules, and announcements anytime from your dashboard — your community always sees the latest.</p>
       </div>
     </div>
+    <p class="maaser-note">And we give 10% of our profits to tzedakah.</p>
   </div>
 </section>
 
@@ -1165,11 +1176,15 @@
         <h3>Does a small shul get a smaller app?</h3>
         <p>No. Every congregation gets the same app — prayer, events, board, learning, and giving. The difference is your branding and your content, not a lighter feature set.</p>
       </div>
+      <div>
+        <h3>Do you give tzedakah?</h3>
+        <p>Yes. We set aside 10% of our profits — maaser from what we earn, not an extra charge on your shul.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<p class="price-quiet">$99 a month or $999 a year — <a href="pricing.html">see pricing</a>.</p>
+<p class="price-quiet">$99 a month or $999 a year — <a href="pricing.html">see pricing</a>. We give 10% of our profits to tzedakah.</p>
 
 <div class="cta-band" id="book">
   <div class="wrap">
@@ -1223,7 +1238,7 @@
 <footer>
   <div class="wrap foot">
     <span class="brand-name">iShul</span>
-    <p>&copy; 2026 iShul &middot; <a href="/">Home</a> &middot; <a href="/pricing.html">Pricing</a> &middot; <a href="mailto:Dimitry@YaiDevelopment.com">Dimitry@YaiDevelopment.com</a></p>
+    <p>&copy; 2026 iShul &middot; 10% of profits to tzedakah &middot; <a href="/">Home</a> &middot; <a href="/pricing.html">Pricing</a> &middot; <a href="mailto:Dimitry@YaiDevelopment.com">Dimitry@YaiDevelopment.com</a></p>
   </div>
 </footer>
 
